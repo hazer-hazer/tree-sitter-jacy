@@ -214,6 +214,7 @@ module.exports = grammar({
         func: $ => seq(
             'func',
             field('name', $.ident),
+            field('generics', $.gen_params),
             field('params', optional($._func_param_list)),
             field('return_type', optional($._type_anno)),
             field('body', $._func_body),
