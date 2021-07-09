@@ -1,11 +1,10 @@
 "and" @keyword
 "as" @keyword
-"async" @keyword
-"await" @keyword
+;"async" @keyword
+;"await" @keyword
 "break" @keyword
 "const" @keyword
 "continue" @keyword
-"do" @keyword
 "elif" @keyword
 "else" @keyword
 "enum" @keyword

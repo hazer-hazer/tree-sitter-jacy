@@ -409,7 +409,7 @@ module.exports = grammar({
             optional($._expr),
         )),
 
-        continue_expr: $ => 'continue',
+        continue_expr: $ => prec.left('continue'),
 
         // Lambda //
         lambda: $ => prec(-1, seq(

@@ -1029,6 +1029,11 @@
     }
   },
   {
+    "type": "continue_expr",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "fn_type",
     "named": true,
     "fields": {
@@ -3661,8 +3666,8 @@
     "named": false
   },
   {
-    "type": "continue_expr",
-    "named": true
+    "type": "continue",
+    "named": false
   },
   {
     "type": "elif",

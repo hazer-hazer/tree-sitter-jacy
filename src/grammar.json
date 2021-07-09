@@ -2222,8 +2222,12 @@
       }
     },
     "continue_expr": {
-      "type": "STRING",
-      "value": "continue"
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "STRING",
+        "value": "continue"
+      }
     },
     "lambda": {
       "type": "PREC",
