@@ -5,7 +5,8 @@
   "main": "bindings/node",
   "scripts": {
     "build": "tree-sitter generate && node-gyp build",
-    "config": "node-gyp configure --release --verbose --python=python2 --target=$(node --version)"
+    "config": "node-gyp configure --release --verbose --python=python2 --target=$(node --version)",
+    "dev": "npm run config && npm run build && ./node_modules/.bin/tree-sitter generate"
   },
   "repository": {
     "type": "git",
