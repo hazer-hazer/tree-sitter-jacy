@@ -371,7 +371,7 @@
         }
       ]
     },
-    "_gen_args": {
+    "gen_args": {
       "type": "SEQ",
       "members": [
         {
@@ -530,7 +530,7 @@
         }
       ]
     },
-    "_gen_params": {
+    "gen_params": {
       "type": "CHOICE",
       "members": [
         {
@@ -1978,7 +1978,7 @@
           "name": "generics",
           "content": {
             "type": "SYMBOL",
-            "name": "_gen_args"
+            "name": "gen_args"
           }
         }
       ]
@@ -2705,7 +2705,7 @@
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "_gen_args"
+                        "name": "gen_args"
                       }
                     ]
                   }
@@ -2759,7 +2759,7 @@
             "name": "gen_args",
             "content": {
               "type": "SYMBOL",
-              "name": "_gen_args"
+              "name": "gen_args"
             }
           }
         ]

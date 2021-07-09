@@ -1459,103 +1459,102 @@
     }
   },
   {
+    "type": "gen_args",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "block_expr",
+          "named": true
+        },
+        {
+          "type": "bool_lit",
+          "named": true
+        },
+        {
+          "type": "char_lit",
+          "named": true
+        },
+        {
+          "type": "float_lit",
+          "named": true
+        },
+        {
+          "type": "fn_type",
+          "named": true
+        },
+        {
+          "type": "gen_type",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "int_lit",
+          "named": true
+        },
+        {
+          "type": "lifetime",
+          "named": true
+        },
+        {
+          "type": "mut_type",
+          "named": true
+        },
+        {
+          "type": "parent_type",
+          "named": true
+        },
+        {
+          "type": "prim_type",
+          "named": true
+        },
+        {
+          "type": "ref_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
+          "named": true
+        },
+        {
+          "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "tuple_type",
+          "named": true
+        },
+        {
+          "type": "type_path",
+          "named": true
+        },
+        {
+          "type": "unit_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "gen_type",
     "named": true,
     "fields": {
       "gen_args": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": "array_type",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_lit",
-            "named": true
-          },
-          {
-            "type": "char_lit",
-            "named": true
-          },
-          {
-            "type": "float_lit",
-            "named": true
-          },
-          {
-            "type": "fn_type",
-            "named": true
-          },
-          {
-            "type": "gen_type",
-            "named": true
-          },
-          {
-            "type": "ident",
-            "named": true
-          },
-          {
-            "type": "int_lit",
-            "named": true
-          },
-          {
-            "type": "lifetime",
-            "named": true
-          },
-          {
-            "type": "mut_type",
-            "named": true
-          },
-          {
-            "type": "parent_type",
-            "named": true
-          },
-          {
-            "type": "prim_type",
-            "named": true
-          },
-          {
-            "type": "ref_type",
-            "named": true
-          },
-          {
-            "type": "slice_type",
-            "named": true
-          },
-          {
-            "type": "string_lit",
-            "named": true
-          },
-          {
-            "type": "tuple_type",
-            "named": true
-          },
-          {
-            "type": "type_path",
-            "named": true
-          },
-          {
-            "type": "unit_type",
+            "type": "gen_args",
             "named": true
           }
         ]
@@ -3110,99 +3109,11 @@
     "named": true,
     "fields": {
       "generics": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": "array_type",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_lit",
-            "named": true
-          },
-          {
-            "type": "char_lit",
-            "named": true
-          },
-          {
-            "type": "float_lit",
-            "named": true
-          },
-          {
-            "type": "fn_type",
-            "named": true
-          },
-          {
-            "type": "gen_type",
-            "named": true
-          },
-          {
-            "type": "ident",
-            "named": true
-          },
-          {
-            "type": "int_lit",
-            "named": true
-          },
-          {
-            "type": "lifetime",
-            "named": true
-          },
-          {
-            "type": "mut_type",
-            "named": true
-          },
-          {
-            "type": "parent_type",
-            "named": true
-          },
-          {
-            "type": "prim_type",
-            "named": true
-          },
-          {
-            "type": "ref_type",
-            "named": true
-          },
-          {
-            "type": "slice_type",
-            "named": true
-          },
-          {
-            "type": "string_lit",
-            "named": true
-          },
-          {
-            "type": "tuple_type",
-            "named": true
-          },
-          {
-            "type": "type_path",
-            "named": true
-          },
-          {
-            "type": "unit_type",
+            "type": "gen_args",
             "named": true
           }
         ]
@@ -3287,67 +3198,11 @@
         "required": false,
         "types": [
           {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": "array_type",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_lit",
-            "named": true
-          },
-          {
-            "type": "char_lit",
-            "named": true
-          },
-          {
-            "type": "float_lit",
-            "named": true
-          },
-          {
-            "type": "fn_type",
-            "named": true
-          },
-          {
-            "type": "gen_type",
+            "type": "gen_args",
             "named": true
           },
           {
             "type": "ident",
-            "named": true
-          },
-          {
-            "type": "int_lit",
-            "named": true
-          },
-          {
-            "type": "lifetime",
-            "named": true
-          },
-          {
-            "type": "mut_type",
-            "named": true
-          },
-          {
-            "type": "parent_type",
             "named": true
           },
           {
@@ -3359,43 +3214,15 @@
             "named": true
           },
           {
-            "type": "prim_type",
-            "named": true
-          },
-          {
-            "type": "ref_type",
-            "named": true
-          },
-          {
             "type": "self",
             "named": false
-          },
-          {
-            "type": "slice_type",
-            "named": true
-          },
-          {
-            "type": "string_lit",
-            "named": true
           },
           {
             "type": "super",
             "named": false
           },
           {
-            "type": "tuple_type",
-            "named": true
-          },
-          {
             "type": "turbofish_gen",
-            "named": true
-          },
-          {
-            "type": "type_path",
-            "named": true
-          },
-          {
-            "type": "unit_type",
             "named": true
           }
         ]
