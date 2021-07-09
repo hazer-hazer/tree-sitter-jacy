@@ -1935,10 +1935,6 @@
             "named": false
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "param",
             "named": true
           }
@@ -3799,6 +3795,10 @@
   },
   {
     "type": "[",
+    "named": false
+  },
+  {
+    "type": "\\",
     "named": false
   },
   {
