@@ -105,10 +105,7 @@ module.exports = grammar({
     name: 'jacy',
 
     conflicts: $ => [
-        [$._expr, $._pattern],
-        [$._literal, $.lit_pat],
         [$._type, $._path],
-        [$._expr, $._path],
         [$.path_in_expr, $.type_path],
         // [$.path_in_expr, $.type_path],
     ],
