@@ -1576,7 +1576,7 @@
       },
       "generics": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "gen_params",

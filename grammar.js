@@ -107,7 +107,6 @@ module.exports = grammar({
     conflicts: $ => [
         [$._type, $._path],
         [$.path_in_expr, $.type_path],
-        // [$.path_in_expr, $.type_path],
     ],
 
     word: $ => $.ident,
