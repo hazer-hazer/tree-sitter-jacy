@@ -134,11 +134,25 @@ module.exports = grammar({
         )),
 
         char_lit: $ => /'.'/,
+        
+        // escape_seq: $ => token(prec(1, seq(
+        //     '\\',
+        //     choice(
+        //         /[^xuU]/,
+        //         /\d{2,3}/,
+        //         /x[0-9a-fA-F]{2,}/,
+        //         /u[0-9a-fA-F]{4}/,
+        //         /U[0-9a-fA-F]{8}/
+        //     ),
+        // )),
 
         string_lit: $ => seq(
-            alias(/b?"/, '"'),
-            repeat(/.*?!"/),
-            token.immediate('"'),
+            '"',
+            repeat(choice(
+                token.immediate(prec(1, /[^\\"\n]+/)),
+                // $.escape_seq,
+            )),
+            '"',
         ),
 
         // Fragments //
