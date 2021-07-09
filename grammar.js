@@ -206,6 +206,7 @@ module.exports = grammar({
             $.enum,
             $.impl,
             $.type_alias,
+            $.mod,
         ),
 
         // Func //
@@ -257,6 +258,12 @@ module.exports = grammar({
         // TODO: Finish
         type_alias: $ => seq(
             'type',
+        ),
+
+        // Mod //
+        // TODO: Finish
+        mod: $ => seq(
+            'mod',
         ),
 
         ////////////////
