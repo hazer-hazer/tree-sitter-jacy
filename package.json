@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tree-sitter generate && node-gyp build",
     "config": "node-gyp configure --release --verbose --python=python2 --target=$(node --version)",
-    "dev": "npm run config && npm run build && ./node_modules/.bin/tree-sitter generate",
+    "dev": "npm run config && npm run build && ./node_modules/.bin/tree-sitter generate && ./node_modules/.bin/tree-sitter test",
     "sample": "./node_modules/.bin/tree-sitter parse ./example.jc"
   },
   "repository": {
