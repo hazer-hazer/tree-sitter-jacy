@@ -45,12 +45,43 @@
 "while" @keyword
 "yield" @keyword
 
-
+; Literals
 (bool_lit) @number
 (int_lit) @number
 (float_lit) @number
 (char_lit) @number
-(string_lit) @number
 
+(char_lit) @string
+(string_lit) @string
 
+; Types
+(prim_type) @type
+
+; Function
+(func name: (ident) @function)
+(param (ident) @variable.parameter)
+
+; Other operators
+"as" @operator
+"*" @operator
+"&" @operator
+"'" @operator
+
+; Punctuations
+"::" @punctuation.delimiter
+"." @punctuation.delimiter
+";" @punctuation.delimiter
+
+"(" @punctuation.bracket
+")" @punctuation.bracket
+"[" @punctuation.bracket
+"]" @punctuation.bracket
+
+; Generics
+(gen_args
+    "<" @punctuation.bracket
+    ">" @punctuation.bracket)
+(gen_params
+    "<" @punctuation.bracket
+    ">" @punctuation.bracket)
 

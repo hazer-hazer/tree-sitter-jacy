@@ -159,7 +159,7 @@ module.exports = grammar({
             $.path_in_expr,
         ),
 
-        _gen_args: $ => seq(
+        gen_args: $ => seq(
             token(prec(1, '<')),
             delim1(',', choice(
                 $._type,
@@ -181,7 +181,7 @@ module.exports = grammar({
             $.ident,
         ),
 
-        _gen_params: $ => choice(
+        gen_params: $ => choice(
             seq('<', '>'),
             seq(
                 '<',
@@ -347,7 +347,7 @@ module.exports = grammar({
 
         turbofish_gen: $ => seq(
             '::',
-            field('generics', $._gen_args),
+            field('generics', $.gen_args),
         ),
 
         // Control-Flow //
@@ -491,7 +491,7 @@ module.exports = grammar({
             field('path', optional(choice(
                 $._path,
                 $.turbofish_gen,
-                seq($.ident, $._gen_args),
+                seq($.ident, $.gen_args),
             ))),
             '::',
             field('name', $.ident),
@@ -502,7 +502,7 @@ module.exports = grammar({
                 $.ident,
                 $.type_path,
             )),
-            field('gen_args', $._gen_args),
+            field('gen_args', $.gen_args),
         )),
 
         //////////////
