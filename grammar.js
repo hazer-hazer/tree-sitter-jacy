@@ -356,6 +356,8 @@ module.exports = grammar({
             $.return_expr,
             $.break_expr,
             $.continue_expr,
+
+            $.ref_expr,
         ),
 
         _literal: $ => choice(
@@ -466,6 +468,12 @@ module.exports = grammar({
         )),
 
         continue_expr: $ => prec.left('continue'),
+
+        ref_expr: $ => prec(PREC.unary, seq(
+            '&',
+            optional('mut'),
+            field('value', $._expr),
+        )),
 
         // Lambda //
         lambda: $ => prec(-1, seq(
