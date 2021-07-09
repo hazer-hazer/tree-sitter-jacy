@@ -340,6 +340,8 @@ module.exports = grammar({
             $.block_expr,
 
             $.binop_expr,
+            $.member_access_expr,
+
             $.assign_expr,
 
             $.lambda,
@@ -376,6 +378,12 @@ module.exports = grammar({
             field('op', ops.length > 1 ? choice(...ops) : ops[0]),
             field('rhs', $._expr),
         )))),
+
+        member_access_expr: $ => seq(
+            field('lhs', $._expr),
+            PREC.field,
+            field('rhs', $._expr),
+        ),
 
         assign_expr: $ => prec.left(PREC.assign, seq(
             field('lhs', $._expr),
