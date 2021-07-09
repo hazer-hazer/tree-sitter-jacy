@@ -46,12 +46,11 @@
 "yield" @keyword
 
 
-[
-    (bool_lit)
-    (int_lit)
-    (float_lit)
-    (char_lit)
-    (string_lit)
-] @number
+(bool_lit) @number
+(int_lit) @number
+(float_lit) @number
+(char_lit) @number
+(string_lit) @number
+
 
 
