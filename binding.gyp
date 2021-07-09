@@ -1,10 +1,10 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_Jacy_binding",
+      "target_name": "tree-sitter-jacy",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
-        "src"
+        "./src"
       ],
       "sources": [
         "bindings/node/binding.cc",
@@ -12,6 +12,7 @@
       ],
       "cflags_c": [
         "-std=c99",
+        "-Isrc"
       ]
     }
   ]

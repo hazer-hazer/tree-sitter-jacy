@@ -3,4 +3,4 @@
 export builddir_name ?= ./build/.
 .PHONY: all
 all:
-	$(MAKE) tree_sitter_Jacy_binding
+	$(MAKE) tree-sitter-jacy
