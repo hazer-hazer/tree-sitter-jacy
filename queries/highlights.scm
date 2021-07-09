@@ -100,5 +100,3 @@
 (string_lit) @literal
 
 (ident) @var
-
-(comment) @comment
