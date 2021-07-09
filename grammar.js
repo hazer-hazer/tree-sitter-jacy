@@ -298,7 +298,7 @@ module.exports = grammar({
             $.lambda,
             $.unit_expr,
             $.tuple,
-            
+
             $.if_expr,
             $.match_expr,
             $.loop_expr,

@@ -55,10 +55,11 @@
 (string_lit) @string
 
 ; Types
-(prim_type) @type
+(prim_type) @type.builtin
+(type_path (ident) @type)
 
 ; Function
-(func name: (ident) @function)
+(func (ident) @function)
 (param (ident) @variable.parameter)
 
 ; Other operators
