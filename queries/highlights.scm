@@ -87,10 +87,10 @@
 
 ; Paths
 ((path_in_expr
-    path: (identifier) @type)
+    path: (ident) @type)
     (#match? @type "^[A-Z]"))
 
 ((path_in_expr
-    path: (scoped_identifier
-    name: (identifier) @type))
+    path: (path_in_expr
+    name: (ident) @type))
     (#match? @type "^[A-Z]"))

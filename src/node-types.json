@@ -1530,6 +1530,16 @@
           }
         ]
       },
+      "generics": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gen_params",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -1700,6 +1710,29 @@
         },
         {
           "type": "unit_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gen_params",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "const_param",
+          "named": true
+        },
+        {
+          "type": "lifetime",
+          "named": true
+        },
+        {
+          "type": "type_param",
           "named": true
         }
       ]

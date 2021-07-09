@@ -743,6 +743,14 @@
         },
         {
           "type": "FIELD",
+          "name": "generics",
+          "content": {
+            "type": "SYMBOL",
+            "name": "gen_params"
+          }
+        },
+        {
+          "type": "FIELD",
           "name": "params",
           "content": {
             "type": "CHOICE",
