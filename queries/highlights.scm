@@ -91,3 +91,14 @@
 "|>" @operator
 "$" @operator
 "@" @operator
+
+(bool_lit) @literal
+(int_lit) @literal
+(float_lit) @literal
+
+(char) @string
+(string_lit) @literal
+
+(ident) @var
+
+(comment) @comment
