@@ -201,13 +201,14 @@ module.exports = grammar({
         ///////////
         // Items //
         ///////////
-        _item: $ => choice(
+        _item: $ => seq(choice(
             $.func,
             $.enum,
             $.impl,
             $.type_alias,
             $.mod,
-        ),
+            $.struct,
+        )),
 
         // Func //
         func: $ => seq(
@@ -264,6 +265,18 @@ module.exports = grammar({
         // TODO: Finish
         mod: $ => seq(
             'mod',
+        ),
+
+        // Struct //
+        // TODO: Finish
+        struct: $ => seq(
+            'struct',
+        ),
+
+        // Trait //
+        // TODO: Finish
+        trait: $ => seq(
+            'trait',
         ),
 
         ////////////////

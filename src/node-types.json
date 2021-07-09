@@ -728,6 +728,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "paren_expr",
           "named": true
         },
@@ -741,6 +745,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct",
           "named": true
         },
         {
@@ -2391,6 +2399,11 @@
     }
   },
   {
+    "type": "mod",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "mut_pat",
     "named": true,
     "fields": {},
@@ -3072,6 +3085,14 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
+          "type": "struct",
+          "named": true
+        },
+        {
           "type": "type_alias",
           "named": true
         }
@@ -3080,6 +3101,11 @@
   },
   {
     "type": "string_lit",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "struct",
     "named": true,
     "fields": {}
   },
@@ -3855,6 +3881,10 @@
     "named": false
   },
   {
+    "type": "mod",
+    "named": false
+  },
+  {
     "type": "mut",
     "named": false
   },
@@ -3883,7 +3913,15 @@
     "named": false
   },
   {
+    "type": "struct",
+    "named": false
+  },
+  {
     "type": "super",
+    "named": false
+  },
+  {
+    "type": "trait",
     "named": false
   },
   {

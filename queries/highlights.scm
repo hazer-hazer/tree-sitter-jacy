@@ -20,29 +20,29 @@
 "loop" @keyword
 "match" @keyword
 "mod" @keyword
-"move" @keyword
+; "move" @keyword
 "mut" @keyword
 "return" @keyword
 "or" @keyword
 "party" @keyword
-"pri" @keyword
-"pub" @keyword
+; "pri" @keyword
+; "pub" @keyword
 "ref" @keyword
 "self" @keyword
-"static" @keyword
+; "static" @keyword
 "struct" @keyword
 "super" @keyword
-"this" @keyword
+; "this" @keyword
 "trait" @keyword
 "true" @keyword
 "type" @keyword
-"union" @keyword
-"unsafe" @keyword
-"use" @keyword
+; "union" @keyword
+; "unsafe" @keyword
+; "use" @keyword
 "let" @keyword
-"where" @keyword
+; "where" @keyword
 "while" @keyword
-"yield" @keyword
+; "yield" @keyword
 
 ; Literals
 (bool_lit) @number
