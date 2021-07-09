@@ -693,36 +693,31 @@
       ]
     },
     "_item": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "func"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "enum"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "impl"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "type_alias"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "mod"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "struct"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "func"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "impl"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "type_alias"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "mod"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "struct"
         }
       ]
     },

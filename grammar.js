@@ -198,14 +198,14 @@ module.exports = grammar({
         ///////////
         // Items //
         ///////////
-        _item: $ => seq(choice(
+        _item: $ => choice(
             $.func,
             $.enum,
             $.impl,
             $.type_alias,
             $.mod,
             $.struct,
-        )),
+        ),
 
         // Func //
         func: $ => seq(
