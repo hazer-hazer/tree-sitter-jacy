@@ -203,6 +203,7 @@ module.exports = grammar({
         ///////////
         _item: $ => choice(
             $.func,
+            $.enum,
         ),
 
         // Func //
@@ -231,6 +232,17 @@ module.exports = grammar({
             seq('=', $._expr, ';'),
             $.block_expr,
         )),
+
+        // Enum //
+        enum: $ => seq(
+            'enum',
+            $.ident,
+            either_semi(seq('{',
+                repeat(choice(
+                    seq($.ident, opt_seq('=', $._expr)),
+                )),
+            '}')),
+        ),
 
         ////////////////
         // Statements //
