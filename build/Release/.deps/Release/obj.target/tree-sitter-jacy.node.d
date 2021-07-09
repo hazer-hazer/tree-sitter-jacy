@@ -1,1 +1,0 @@
-cmd_Release/obj.target/tree-sitter-jacy.node := g++ -shared -pthread -rdynamic -m64  -Wl,-soname=tree-sitter-jacy.node -o Release/obj.target/tree-sitter-jacy.node -Wl,--start-group Release/obj.target/tree-sitter-jacy/bindings/node/binding.o Release/obj.target/tree-sitter-jacy/src/parser.o -Wl,--end-group 

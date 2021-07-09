@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree-sitter-jacy",
+      "target_name": "tree_sitter_jacy_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "./src"
