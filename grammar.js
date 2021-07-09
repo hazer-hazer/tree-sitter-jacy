@@ -204,6 +204,8 @@ module.exports = grammar({
         _item: $ => choice(
             $.func,
             $.enum,
+            $.impl,
+            $.type_alias,
         ),
 
         // Func //
@@ -234,6 +236,7 @@ module.exports = grammar({
         )),
 
         // Enum //
+        // TODO: Finish
         enum: $ => seq(
             'enum',
             $.ident,
@@ -242,6 +245,18 @@ module.exports = grammar({
                     seq($.ident, opt_seq('=', $._expr)),
                 )),
             '}')),
+        ),
+
+        // Impl //
+        // TODO: Finish
+        impl: $ => seq(
+            'impl',
+        ),
+
+        // Type alias //
+        // TODO: Finish
+        type_alias: $ => seq(
+            'type',
         ),
 
         ////////////////

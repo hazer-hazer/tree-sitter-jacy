@@ -14,9 +14,9 @@
 "if" @keyword
 "impl" @keyword
 "in" @keyword
-"!in" @keyword
-"infix" @keyword
-"init" @keyword
+; "!in" @keyword
+; "infix" @keyword
+; "init" @keyword
 "loop" @keyword
 "match" @keyword
 "mod" @keyword
