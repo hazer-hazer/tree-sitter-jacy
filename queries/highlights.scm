@@ -86,3 +86,12 @@
     "<" @punctuation.bracket
     ">" @punctuation.bracket)
 
+; Paths
+((path_in_expr
+    path: (identifier) @type)
+    (#match? @type "^[A-Z]"))
+
+((path_in_expr
+    path: (scoped_identifier
+    name: (identifier) @type))
+    (#match? @type "^[A-Z]"))
