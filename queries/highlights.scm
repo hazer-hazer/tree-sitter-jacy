@@ -81,6 +81,7 @@
 (gen_args
     "<" @punctuation.bracket
     ">" @punctuation.bracket)
+
 (gen_params
     "<" @punctuation.bracket
     ">" @punctuation.bracket)
