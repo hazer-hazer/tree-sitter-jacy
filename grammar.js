@@ -136,8 +136,8 @@ module.exports = grammar({
         char_lit: $ => /'.'/,
 
         string_lit: $ => seq(
-            '"',
-            repeat(/.*/),
+            alias(/b?"/, '"'),
+            repeat(/.*?!"/),
             token.immediate('"'),
         ),
 
