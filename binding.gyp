@@ -12,7 +12,10 @@
       ],
       "cflags_c": [
         "-std=c99",
-      ]
+      ],
+      "variables": {
+        "node_module_version": 80
+      }
     }
   ]
 }

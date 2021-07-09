@@ -11,8 +11,7 @@ DEFS_Debug := \
 	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-DV8_COMPRESS_POINTERS' \
-	'-DV8_31BIT_SMIS_ON_64BIT_ARCH' \
+	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION' \
@@ -42,15 +41,15 @@ CFLAGS_CC_Debug := \
 	-std=gnu++1y
 
 INCS_Debug := \
-	-I$(srcdir)/src \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/include/node \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/src \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/openssl/config \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/openssl/openssl/include \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/uv/include \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/zlib \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/v8/include \
-	-I$(srcdir)/node_modules/nan
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/include/node \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/src \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/openssl/config \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/openssl/openssl/include \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/uv/include \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/zlib \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/v8/include \
+	-I$(srcdir)/node_modules/nan \
+	-I$(srcdir)/src
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=tree_sitter_jacy_binding' \
@@ -61,8 +60,7 @@ DEFS_Release := \
 	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-DV8_COMPRESS_POINTERS' \
-	'-DV8_31BIT_SMIS_ON_64BIT_ARCH' \
+	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION'
@@ -89,15 +87,15 @@ CFLAGS_CC_Release := \
 	-std=gnu++1y
 
 INCS_Release := \
-	-I$(srcdir)/src \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/include/node \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/src \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/openssl/config \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/openssl/openssl/include \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/uv/include \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/zlib \
-	-I/home/hazer-hazer/.atom/.node-gyp/.cache/node-gyp/9.4.4/deps/v8/include \
-	-I$(srcdir)/node_modules/nan
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/include/node \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/src \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/openssl/config \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/openssl/openssl/include \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/uv/include \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/zlib \
+	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/v8/include \
+	-I$(srcdir)/node_modules/nan \
+	-I$(srcdir)/src
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/parser.o \

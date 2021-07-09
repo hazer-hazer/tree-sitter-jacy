@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-jacy",
-  "version": "0.0.2-rc.9",
+  "version": "0.0.2-rc.11",
   "description": "Tree-Sitter grammar for Jacy",
   "main": "bindings/node",
   "engine": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tree-sitter generate && node-gyp build",
-    "config": "node-gyp configure --release --verbose --python=python2"
+    "config": "node-gyp configure --release --verbose --python=python2 --target=$(node --version)"
   },
   "repository": {
     "type": "git",
