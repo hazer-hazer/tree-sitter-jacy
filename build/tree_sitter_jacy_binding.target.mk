@@ -32,8 +32,7 @@ CFLAGS_Debug := \
 
 # Flags passed to only C files.
 CFLAGS_C_Debug := \
-	-std=c99 \
-	-Isrc
+	-std=c99
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
@@ -42,6 +41,7 @@ CFLAGS_CC_Debug := \
 	-std=gnu++1y
 
 INCS_Debug := \
+	-I$(srcdir)/src \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/include/node \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/src \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/openssl/config \
@@ -49,8 +49,7 @@ INCS_Debug := \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/uv/include \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/zlib \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/v8/include \
-	-I$(srcdir)/node_modules/nan \
-	-I$(srcdir)/src
+	-I$(srcdir)/node_modules/nan
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=tree_sitter_jacy_binding' \
@@ -79,8 +78,7 @@ CFLAGS_Release := \
 
 # Flags passed to only C files.
 CFLAGS_C_Release := \
-	-std=c99 \
-	-Isrc
+	-std=c99
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
@@ -89,6 +87,7 @@ CFLAGS_CC_Release := \
 	-std=gnu++1y
 
 INCS_Release := \
+	-I$(srcdir)/src \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/include/node \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/src \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/openssl/config \
@@ -96,12 +95,11 @@ INCS_Release := \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/uv/include \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/zlib \
 	-I/home/hazer-hazer/.cache/node-gyp/14.17.3/deps/v8/include \
-	-I$(srcdir)/node_modules/nan \
-	-I$(srcdir)/src
+	-I$(srcdir)/node_modules/nan
 
 OBJS := \
-	$(obj).target/$(TARGET)/bindings/node/binding.o \
-	$(obj).target/$(TARGET)/src/parser.o
+	$(obj).target/$(TARGET)/src/parser.o \
+	$(obj).target/$(TARGET)/bindings/node/binding.o
 
 # Add to the list of files we specially track dependencies for.
 all_deps += $(OBJS)
