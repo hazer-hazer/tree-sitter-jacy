@@ -412,14 +412,12 @@ module.exports = grammar({
         continue_expr: $ => 'continue',
 
         // Lambda //
-        lambda: $ => prec(-1, seq(
-            field('params', choice(
-                $.ident,
-                $._func_param_list,
-            )),
+        lambda: $ => seq(
+            '\\',
+            field('params', $._func_param_list),
             '->',
             field('body', $._expr),
-        )),
+        ),
 
         // Tuple //
         tuple: $ => seq(
