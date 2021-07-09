@@ -47,49 +47,12 @@
     "yield"
 ] @keyword
 
-"=" @operator
-"+=" @operator
-"-=" @operator
-"*=" @operator
-"/=" @operator
-"%=" @operator
-"**=" @operator
-"<<=" @operator
-">>=" @operator
-"&=" @operator
-"|=" @operator
-"^=" @operator
-"??=" @operator
-"+" @operator
-"-" @operator
-"*" @operator
-"/" @operator
-"%" @operator
-"**" @operator
-"||" @operator
-"&&" @operator
-"??" @operator
-"<<" @operator
-">>" @operator
-"&" @operator
-"|" @operator
-"^" @operator
-"~" @operator
-"!" @operator
-"==" @operator
-"!=" @operator
-"<" @operator
-">" @operator
-"<=" @operator
-">=" @operator
-"<=>" @operator
-"===" @operator
-"!==" @operator
-".." @operator
-"..=" @operator
-"." @operator
-"::" @operator
-"..." @operator
-"|>" @operator
-"$" @operator
-"@" @operator
+[
+    (bool_lit)
+    (int_lit)
+    (float_lit)
+    (char_lit)
+    (string_lit)
+] @number
+
+
