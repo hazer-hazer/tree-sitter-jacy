@@ -79,7 +79,6 @@
     "want_separate_host_toolset": 0,
     "nodedir": "/home/hazer-hazer/.cache/node-gyp/14.17.3",
     "standalone_static_library": 1,
-    "target": "v14.17.3",
     "cache_lock_stale": "60000",
     "ham_it_up": "",
     "legacy_bundling": "",
