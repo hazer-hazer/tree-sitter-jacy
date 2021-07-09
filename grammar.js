@@ -379,11 +379,11 @@ module.exports = grammar({
             field('rhs', $._expr),
         )))),
 
-        member_access_expr: $ => seq(
+        member_access_expr: $ => prec.left(PREC.field, seq(
             field('lhs', $._expr),
-            PREC.field,
+            '.',
             field('rhs', $._expr),
-        ),
+        )),
 
         assign_expr: $ => prec.left(PREC.assign, seq(
             field('lhs', $._expr),

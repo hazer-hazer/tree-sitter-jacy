@@ -1373,6 +1373,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "member_access_expr"
+        },
+        {
+          "type": "SYMBOL",
           "name": "assign_expr"
         },
         {
@@ -1985,6 +1989,35 @@
           }
         }
       ]
+    },
+    "member_access_expr": {
+      "type": "PREC_LEFT",
+      "value": 17,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "lhs",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expr"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "."
+          },
+          {
+            "type": "FIELD",
+            "name": "rhs",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expr"
+            }
+          }
+        ]
+      }
     },
     "assign_expr": {
       "type": "PREC_LEFT",
