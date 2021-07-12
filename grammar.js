@@ -265,6 +265,7 @@ module.exports = grammar({
 
         // Func //
         func: $ => seq(
+            optional($.vis_modifier),
             'func',
             field('name', $.ident),
             field('gen_params', optional($.gen_params)),
@@ -293,6 +294,7 @@ module.exports = grammar({
 
         // Enum //
         enum: $ => seq(
+            optional($.vis_modifier),
             'enum',
             $.ident,
             field('gen_params', $.gen_params),
@@ -320,6 +322,7 @@ module.exports = grammar({
 
         // Impl //
         impl: $ => seq(
+            optional($.vis_modifier),
             'impl',
             field('gen_params', optional($.gen_params)),
             opt_seq(
@@ -336,6 +339,7 @@ module.exports = grammar({
 
         // Type alias //
         type_alias: $ => seq(
+            optional($.vis_modifier),
             'type',
             field('name', $._type_ident),
             field('gen_params', optional($.gen_params)),
@@ -353,6 +357,7 @@ module.exports = grammar({
 
         // Mod //
         mod: $ => seq(
+            optional($.vis_modifier),
             'mod',
             field('name', $.ident),
             either_semi(field('body', $.member_list)),
@@ -360,6 +365,7 @@ module.exports = grammar({
 
         // Struct //
         struct: $ => seq(
+            optional($.vis_modifier),
             'struct',
             field('name', $._type_ident),
             field('gen_params', optional($.gen_params)),
@@ -376,6 +382,7 @@ module.exports = grammar({
 
         // Use decl //
         use_decl: $ => seq(
+            optional($.vis_modifier),
             'use',
             field('use_tree', $._use_tree),
             ';',
@@ -409,6 +416,7 @@ module.exports = grammar({
 
         // Trait //
         trait: $ => seq(
+            optional($.vis_modifier),
             'trait',
             field('name', $._type_ident),
             field('gen_params', optional($.gen_params)),
