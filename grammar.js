@@ -158,13 +158,12 @@ module.exports = grammar({
         _type_anno: $ => seq(':', $._type),
 
         self: $ => 'self',
+        super: $ => 'super',
+        party: $ => 'party',
 
         _path: $ => choice(
-            $.self,
-            'super',
-            'party',
             alias(choice(...prim_types), $.ident),
-            $.ident,
+            $._path_ident,
             $.path_in_expr,
         ),
 
@@ -184,9 +183,9 @@ module.exports = grammar({
         lifetime: $ => seq('\'', $.ident),
 
         _path_ident: $ => choice(
-            'super',
+            $.super,
             $.self,
-            'party',
+            $.party,
             $.ident,
         ),
 
