@@ -51,10 +51,6 @@
 (char_lit) @string
 (string_lit) @string
 
-; Types
-(prim_type) @type.builtin
-(type_path (ident) @type)
-
 ; Function
 (func (ident) @function)
 (param (ident) @variable.parameter)
@@ -100,9 +96,31 @@
     name: (ident) @type))
     (#match? @type "^[A-Z]"))
 
+; Call expression
 (call_expr
-    function: (ident) @function)
+    func: (ident) @function)
 
 (call_expr
-    function: (field_expr
-        field: ()))
+    func: (field_expr
+        field: (field_ident) @function.method))
+
+(call_expr
+    func: (path_in_expr
+        "::"
+        name: (ident) @function))
+
+; `func`
+(func (ident) @function)
+
+; Types
+(type_ident) @type
+(prim_type) @type.builtin
+(type_path (ident) @type)
+
+; Other
+(line_comment) @comment
+(block_comment) @comment
+
+(lifetime (ident) @label)
+
+(self) @variable.builtin
