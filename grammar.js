@@ -682,16 +682,6 @@ module.exports = grammar({
             '}',
         ),
 
-        type_path: $ => seq(
-            field('path', optional(choice(
-                $._path,
-                alias($.gen_type_turbo_fish, $.gen_type),
-                $.gen_type,
-            ))),
-            '::',
-            field('name', $._type_ident),
-        ),
-
         type_path_in_expr: $ => prec(-2, seq(
             field('path', optional(choice(
                 $._path,
