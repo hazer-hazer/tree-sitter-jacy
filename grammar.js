@@ -689,6 +689,8 @@ module.exports = grammar({
                 $._path,
                 $.gen_type
             ))),
+            '::',
+            field('name', $._type_ident),
         )),
 
         // Lambda //
