@@ -282,11 +282,21 @@ module.exports = grammar({
         ),
 
         enum_body: $ => seq('{',
-            repeat(choice(
-                seq($._type_ident, opt_seq('=', $._expr)),
-                seq($._type_ident, )
-            )),
+            delim(',', $.enum_variant),
+            trail_comma,
         '}'),
+
+        enum_variant: $ => seq(
+            field('name', $.ident),
+            field('body', optional(choice(
+                $.field_list,
+                $.tuple_field_list,
+            ))),
+            opt_seq(
+                '=',
+                field('discriminant', $._expr),
+            ),
+        ),
 
         // Impl //
         // TODO: Finish
