@@ -5735,7 +5735,7 @@
             "named": true
           },
           {
-            "type": "use_rebind",
+            "type": "use_path",
             "named": true
           },
           {
@@ -5757,12 +5757,12 @@
     }
   },
   {
-    "type": "use_rebind",
+    "type": "use_path",
     "named": true,
     "fields": {
       "binding": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "_",
@@ -5800,43 +5800,22 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "use_specific",
+          "named": true
+        }
+      ]
     }
   },
   {
     "type": "use_specific",
     "named": true,
-    "fields": {
-      "path": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "::",
-            "named": false
-          },
-          {
-            "type": "ident",
-            "named": true
-          },
-          {
-            "type": "party",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "self",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": false,
@@ -5846,7 +5825,7 @@
           "named": true
         },
         {
-          "type": "use_rebind",
+          "type": "use_path",
           "named": true
         },
         {

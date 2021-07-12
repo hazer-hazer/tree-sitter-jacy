@@ -384,19 +384,23 @@ module.exports = grammar({
         ),
 
         _use_tree: $ => choice(
-            $.use_rebind,
             $.use_specific,
             $.use_all,
+            $.use_path,
         ),
 
-        use_rebind: $ => seq(
+        use_path: $ => seq(
             field('path', $._path),
-            'as',
-            field('binding', choice('_', $.ident)),
+            optional(choice(
+                seq('::', $.use_specific),
+                seq(
+                    'as',
+                    field('binding', choice('_', $.ident)),
+                ),
+            )),
         ),
 
         use_specific: $ => seq(
-            field('path', opt_seq(optional($._path), '::')),
             '{',
             delim(',', $._use_tree),
             trail_comma,
