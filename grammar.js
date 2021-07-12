@@ -250,9 +250,11 @@ module.exports = grammar({
             $.enum,
             $.impl,
             $.type_alias,
+            $.assoc_type,
             $.mod,
             $.struct,
             $.use_decl,
+            $.trait,
         ),
 
         member_list: $ => seq(
