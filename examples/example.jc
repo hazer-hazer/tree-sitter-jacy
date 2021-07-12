@@ -1,3 +1,32 @@
+mod my_module {
+    pub trait Trait {
+        type Assoc;
+
+        func foo: Assoc;
+    }
+
+    pub struct Struct {
+        pub field: i32,
+    }
+
+    pub impl Trait for Struct {
+        type Assoc = i32;
+
+        func foo: Assoc {
+            return self.field;
+        }
+    }
+}
+
 func main {
-    let a = "123";
+    use my_module::{
+        *,
+        Struct,
+        Trait,
+        Trait::Assoc,
+    };
+
+    let a: Struct = Struct {123};
+
+    print(a.field);
 }

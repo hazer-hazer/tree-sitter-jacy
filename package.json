@@ -7,7 +7,7 @@
     "build": "tree-sitter generate && node-gyp build",
     "config": "node-gyp configure --release --verbose --python=python2 --target=$(node --version)",
     "dev": "npm run config && npm run build && tree-sitter generate && tree-sitter test",
-    "test": "tree-sitter test && tree-sitter parse examples/* --quiet --time"
+    "test": "tree-sitter test && tree-sitter parse examples/* --time"
   },
   "repository": {
     "type": "git",
