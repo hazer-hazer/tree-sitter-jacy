@@ -245,16 +245,21 @@ module.exports = grammar({
         ///////////
         // Items //
         ///////////
-        _item: $ => seq(
-            $._opt_vis,
-            choice(
-                $.func,
-                $.enum,
-                $.impl,
-                $.type_alias,
-                $.mod,
-                $.struct,
+        _item: $ => choice(
+            // Items with visibility
+            seq(
+                $._opt_vis,
+                choice(
+                    $.func,
+                    $.enum,
+                    $.impl,
+                    $.type_alias,
+                    $.mod,
+                    $.struct,
+                ),
             ),
+            // Items without visibility
+            $.assoc_type,
         ),
 
         member_list: $ => seq(
@@ -337,6 +342,7 @@ module.exports = grammar({
         // Type alias //
         type_alias: $ => seq(
             'type',
+
         ),
 
         assoc_type: $ => seq(
