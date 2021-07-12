@@ -412,7 +412,7 @@ module.exports = grammar({
             field('expr', $._expr),
             '.',
             field('field', choice(
-                $._expr,
+                $._field_ident,
                 $.int_lit, // Tuple access
             )),
         )),
@@ -689,5 +689,6 @@ module.exports = grammar({
 
         // Aliases
         _type_ident: $ => alias($.ident, $.type_ident),
+        _field_ident: $ => alias($.ident, $.field_ident),
     },
 })

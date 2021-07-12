@@ -104,5 +104,5 @@
     function: (ident) @function)
 
 (call_expr
-    function: (member_access_expr
-        rhs: ()))
+    function: (field_expr
+        field: ()))
