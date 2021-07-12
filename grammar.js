@@ -293,10 +293,12 @@ module.exports = grammar({
             field('body', $.enum_body),
         ),
 
-        enum_body: $ => seq('{',
+        enum_body: $ => seq(
+            '{',
             delim(',', $.enum_variant),
             trail_comma,
-        '}'),
+            '}'
+        ),
 
         enum_variant: $ => seq(
             field('name', $.ident),
