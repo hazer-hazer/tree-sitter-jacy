@@ -5723,51 +5723,13 @@
     }
   },
   {
-    "type": "use_decl",
-    "named": true,
-    "fields": {
-      "use_tree": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "use_all",
-            "named": true
-          },
-          {
-            "type": "use_path",
-            "named": true
-          },
-          {
-            "type": "use_specific",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "vis_modifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "use_path",
+    "type": "use_as",
     "named": true,
     "fields": {
       "binding": {
         "multiple": false,
-        "required": false,
+        "required": true,
         "types": [
-          {
-            "type": "_",
-            "named": false
-          },
           {
             "type": "ident",
             "named": true
@@ -5800,20 +5762,68 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "use_decl",
+    "named": true,
+    "fields": {
+      "use_tree": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "party",
+            "named": true
+          },
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "use_all",
+            "named": true
+          },
+          {
+            "type": "use_as",
+            "named": true
+          },
+          {
+            "type": "use_list",
+            "named": true
+          },
+          {
+            "type": "use_path_list",
+            "named": true
+          }
+        ]
+      }
     },
     "children": {
       "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "use_specific",
+          "type": "vis_modifier",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "use_specific",
+    "type": "use_list",
     "named": true,
     "fields": {},
     "children": {
@@ -5821,18 +5831,84 @@
       "required": false,
       "types": [
         {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "party",
+          "named": true
+        },
+        {
+          "type": "path_expr",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
           "type": "use_all",
           "named": true
         },
         {
-          "type": "use_path",
+          "type": "use_as",
           "named": true
         },
         {
-          "type": "use_specific",
+          "type": "use_list",
+          "named": true
+        },
+        {
+          "type": "use_path_list",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "use_path_list",
+    "named": true,
+    "fields": {
+      "list": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "use_list",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "party",
+            "named": true
+          },
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -6118,11 +6194,6 @@
     }
   },
   {
-    "type": "wildcard",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "!",
     "named": false
   },
@@ -6319,10 +6390,6 @@
     "named": false
   },
   {
-    "type": "_",
-    "named": false
-  },
-  {
     "type": "and",
     "named": false
   },
@@ -6481,6 +6548,10 @@
   {
     "type": "while",
     "named": false
+  },
+  {
+    "type": "wildcard",
+    "named": true
   },
   {
     "type": "{",

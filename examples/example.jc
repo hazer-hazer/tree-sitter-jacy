@@ -19,9 +19,7 @@ mod my_module {
 }
 
 func main {
-    use my_module::{
-        Assoc,
-    };
+    use std::collections::hash_map::{self, HashMap};
 
     let a: Struct = Struct {field: 123};
 

@@ -79,7 +79,7 @@
 
 ;;; Specific rules for identifiers
 
-(use_specific (self) @keyword)
+(use_path (self) @keyword)
 (path_expr (self) @keyword)
 (type_path (self) @keyword)
 

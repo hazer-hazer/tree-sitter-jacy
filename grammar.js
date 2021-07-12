@@ -384,32 +384,37 @@ module.exports = grammar({
         ),
 
         _use_tree: $ => choice(
-            $.use_specific,
+            $._path,
+            $.use_list,
+            $.use_path_list,
+            $.use_as,
             $.use_all,
-            $.use_path,
         ),
 
-        use_path: $ => seq(
-            field('path', $._path),
-            optional(choice(
-                seq('::', $.use_specific),
-                seq(
-                    'as',
-                    field('binding', choice('_', $.ident)),
-                ),
-            )),
+        use_path_list: $ => seq(
+            field('path', optional($._path)),
+            '::',
+            field('list', $.use_list),
         ),
 
-        use_specific: $ => seq(
+        use_list: $ => seq(
             '{',
-            delim(',', $._use_tree),
+            delim(',', choice(
+                $._use_tree,
+            )),
             trail_comma,
             '}',
         ),
 
+        use_as: $ => seq(
+            field('path', $._path),
+            'as',
+            field('binding', $.ident),
+        ),
+        
         use_all: $ => seq(
             opt_seq($._path, '::'),
-            '*'
+            '*',
         ),
 
         // Trait //
