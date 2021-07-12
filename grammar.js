@@ -398,7 +398,15 @@ module.exports = grammar({
             field('path', $._path),
             'as',
             field('binding', choice('_', $.ident)),
-        )
+        ),
+
+        use_specific: $ => seq(
+            field('path', optional($._path)),
+            '{',
+            delim(',', $._use_tree),
+            trail_comma,
+            '}',
+        ),
 
         // Trait //
         trait: $ => seq(
