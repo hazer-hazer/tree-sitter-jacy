@@ -206,6 +206,10 @@
           "named": true
         },
         {
+          "type": "never_type",
+          "named": true
+        },
+        {
           "type": "paren_expr",
           "named": true
         },
@@ -1030,6 +1034,10 @@
           "named": true
         },
         {
+          "type": "never_type",
+          "named": true
+        },
+        {
           "type": "paren_expr",
           "named": true
         },
@@ -1241,6 +1249,10 @@
             "named": true
           },
           {
+            "type": "never_type",
+            "named": true
+          },
+          {
             "type": "parent_type",
             "named": true
           },
@@ -1289,6 +1301,10 @@
         },
         {
           "type": "mut_type",
+          "named": true
+        },
+        {
+          "type": "never_type",
           "named": true
         },
         {
@@ -1649,6 +1665,10 @@
             "named": true
           },
           {
+            "type": "never_type",
+            "named": true
+          },
+          {
             "type": "parent_type",
             "named": true
           },
@@ -1730,6 +1750,10 @@
         },
         {
           "type": "mut_type",
+          "named": true
+        },
+        {
+          "type": "never_type",
           "named": true
         },
         {
@@ -2626,6 +2650,10 @@
             "named": true
           },
           {
+            "type": "never_type",
+            "named": true
+          },
+          {
             "type": "parent_type",
             "named": true
           },
@@ -3210,6 +3238,10 @@
           "named": true
         },
         {
+          "type": "never_type",
+          "named": true
+        },
+        {
           "type": "parent_type",
           "named": true
         },
@@ -3239,6 +3271,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "never_type",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "param",
@@ -3304,6 +3341,10 @@
           },
           {
             "type": "mut_type",
+            "named": true
+          },
+          {
+            "type": "never_type",
             "named": true
           },
           {
@@ -3467,6 +3508,10 @@
         },
         {
           "type": "mut_type",
+          "named": true
+        },
+        {
+          "type": "never_type",
           "named": true
         },
         {
@@ -3858,6 +3903,10 @@
           "named": true
         },
         {
+          "type": "never_type",
+          "named": true
+        },
+        {
           "type": "parent_type",
           "named": true
         },
@@ -4017,6 +4066,10 @@
         },
         {
           "type": "mut_type",
+          "named": true
+        },
+        {
+          "type": "never_type",
           "named": true
         },
         {
@@ -4227,6 +4280,10 @@
           "named": true
         },
         {
+          "type": "never_type",
+          "named": true
+        },
+        {
           "type": "parent_type",
           "named": true
         },
@@ -4300,6 +4357,10 @@
         },
         {
           "type": "mut_type",
+          "named": true
+        },
+        {
+          "type": "never_type",
           "named": true
         },
         {

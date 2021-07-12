@@ -294,10 +294,6 @@
               },
               {
                 "type": "STRING",
-                "value": "!"
-              },
-              {
-                "type": "STRING",
                 "value": "i8"
               },
               {
@@ -1296,10 +1292,6 @@
               {
                 "type": "STRING",
                 "value": "str"
-              },
-              {
-                "type": "STRING",
-                "value": "!"
               },
               {
                 "type": "STRING",
@@ -2768,10 +2760,6 @@
               },
               {
                 "type": "STRING",
-                "value": "!"
-              },
-              {
-                "type": "STRING",
                 "value": "i8"
               },
               {
@@ -2878,6 +2866,10 @@
         {
           "type": "SYMBOL",
           "name": "gen_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "never_type"
         }
       ]
     },
@@ -3185,6 +3177,10 @@
           }
         ]
       }
+    },
+    "never_type": {
+      "type": "STRING",
+      "value": "!"
     },
     "_pattern": {
       "type": "CHOICE",

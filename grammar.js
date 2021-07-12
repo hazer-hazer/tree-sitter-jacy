@@ -21,7 +21,6 @@ const prim_types = [
     'bool',
     'char',
     'str',
-    '!',
     ...int_types,
     ...float_types,
 ]
