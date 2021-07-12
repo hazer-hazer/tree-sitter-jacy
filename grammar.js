@@ -206,6 +206,18 @@ module.exports = grammar({
 
         const_param: $ => seq('const', $.ident, $._type_anno, opt_seq('=', $._expr)),
 
+        field_list: $ => seq(
+            '{',
+            delim(',', $.field),
+            '}',
+        ),
+
+        field: $ => seq(
+            field('name', $._field_ident),
+            ':',
+            field('type', $._type),
+        ),
+
         // Comments //
         comment: $ => token(choice(
             seq('//', /(\\(.|\r?\n)|[^\\\n])*/),
@@ -262,16 +274,19 @@ module.exports = grammar({
         )),
 
         // Enum //
-        // TODO: Finish
         enum: $ => seq(
             'enum',
             $.ident,
-            either_semi(seq('{',
-                repeat(choice(
-                    seq($._type_ident, opt_seq('=', $._expr)),
-                )),
-            '}')),
+            field('gen_params', $.gen_params),
+            field('body', $.enum_body),
         ),
+
+        enum_body: $ => seq('{',
+            repeat(choice(
+                seq($._type_ident, opt_seq('=', $._expr)),
+                seq($._type_ident, )
+            )),
+        '}'),
 
         // Impl //
         // TODO: Finish
