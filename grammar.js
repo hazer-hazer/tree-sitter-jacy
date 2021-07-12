@@ -611,6 +611,7 @@ module.exports = grammar({
             seq(optional('-'), $.float_lit),
             $.char_lit,
             $.string_lit,
+            $._neg_lit,
         ),
 
         bind_pat: $ => seq(
