@@ -387,7 +387,6 @@ module.exports = grammar({
             $._path,
             $.use_rebind,
             $.use_specific,
-            $.use_path_specific,
             $.use_all,
         ),
 
@@ -398,16 +397,11 @@ module.exports = grammar({
         ),
 
         use_specific: $ => seq(
+            field('path', opt_seq(optional($._path), '::')),
             '{',
             delim(',', $._use_tree),
             trail_comma,
             '}',
-        ),
-
-        use_path_specific: $ => seq(
-            field('path', opt_seq($._path)),
-            '::',
-            field('specifics', $.use_specific),
         ),
 
         use_all: $ => seq(

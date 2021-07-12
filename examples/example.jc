@@ -20,10 +20,7 @@ mod my_module {
 
 func main {
     use my_module::{
-        *,
-        Struct,
-        Trait,
-        Trait::Assoc,
+        Assoc,
     };
 
     let a: Struct = Struct {field: 123};
