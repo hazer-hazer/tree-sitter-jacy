@@ -401,7 +401,7 @@ module.exports = grammar({
         ),
 
         use_specific: $ => seq(
-            field('path', optional($._path)),
+            field('path', opt_seq($._path, '::')),
             '{',
             delim(',', $._use_tree),
             trail_comma,
