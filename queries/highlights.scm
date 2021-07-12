@@ -80,7 +80,7 @@
 ;;; Specific rules for identifiers
 
 (use_specific (self) @keyword)
-(path_in_expr (self) @keyword)
+(path_expr (self) @keyword)
 (type_path (self) @keyword)
 
 ; CAPS identifiers treated as constants
@@ -88,12 +88,12 @@
     (#match? @constant "^[A-Z][A-Z\\d_]+$"))
 
 ; PascalCase identifiers in paths treated as types
-((path_in_expr
+((path_expr
     path: (ident) @type)
     (#match? @type "^[A-Z]"))
 
-((path_in_expr
-    path: (path_in_expr
+((path_expr
+    path: (path_expr
     name: (ident) @type))
     (#match? @type "^[A-Z]"))
 
@@ -106,7 +106,7 @@
         field: (field_ident) @function.method))
 
 (call_expr
-    func: (path_in_expr
+    func: (path_expr
         "::"
         name: (ident) @function))
 

@@ -86,7 +86,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -107,6 +107,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -222,11 +226,7 @@
           "named": true
         },
         {
-          "type": "party",
-          "named": true
-        },
-        {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -262,7 +262,7 @@
           "named": true
         },
         {
-          "type": "super",
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -275,6 +275,10 @@
         },
         {
           "type": "tuple_type",
+          "named": true
+        },
+        {
+          "type": "type_ident",
           "named": true
         },
         {
@@ -369,7 +373,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -390,6 +394,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -479,7 +487,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -500,6 +508,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -692,7 +704,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -717,6 +729,10 @@
         },
         {
           "type": "struct",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -879,7 +895,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -900,6 +916,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -1004,7 +1024,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -1025,6 +1045,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -1140,11 +1164,7 @@
           "named": true
         },
         {
-          "type": "party",
-          "named": true
-        },
-        {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -1180,7 +1200,7 @@
           "named": true
         },
         {
-          "type": "super",
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -1193,6 +1213,10 @@
         },
         {
           "type": "tuple_type",
+          "named": true
+        },
+        {
+          "type": "type_ident",
           "named": true
         },
         {
@@ -1361,7 +1385,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -1382,6 +1406,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -1441,19 +1469,11 @@
             "named": true
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "mut_type",
             "named": true
           },
           {
             "type": "never_type",
-            "named": true
-          },
-          {
-            "type": "party",
             "named": true
           },
           {
@@ -1465,19 +1485,15 @@
             "named": true
           },
           {
-            "type": "self",
-            "named": true
-          },
-          {
             "type": "slice_type",
             "named": true
           },
           {
-            "type": "super",
+            "type": "tuple_type",
             "named": true
           },
           {
-            "type": "tuple_type",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -1579,7 +1595,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -1600,6 +1616,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -1630,6 +1650,250 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "field_init_list",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "field_ident",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "assign_expr",
+            "named": true
+          },
+          {
+            "type": "block_expr",
+            "named": true
+          },
+          {
+            "type": "bool_lit",
+            "named": true
+          },
+          {
+            "type": "break_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "char_lit",
+            "named": true
+          },
+          {
+            "type": "continue_expr",
+            "named": true
+          },
+          {
+            "type": "field_expr",
+            "named": true
+          },
+          {
+            "type": "float_lit",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "infix_expr",
+            "named": true
+          },
+          {
+            "type": "int_lit",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "loop_expr",
+            "named": true
+          },
+          {
+            "type": "match_expr",
+            "named": true
+          },
+          {
+            "type": "paren_expr",
+            "named": true
+          },
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "prefix_expr",
+            "named": true
+          },
+          {
+            "type": "ref_expr",
+            "named": true
+          },
+          {
+            "type": "return_expr",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
+            "named": true
+          },
+          {
+            "type": "try_expr",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "unit_expr",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assign_expr",
+          "named": true
+        },
+        {
+          "type": "block_expr",
+          "named": true
+        },
+        {
+          "type": "bool_lit",
+          "named": true
+        },
+        {
+          "type": "break_expr",
+          "named": true
+        },
+        {
+          "type": "call_expr",
+          "named": true
+        },
+        {
+          "type": "char_lit",
+          "named": true
+        },
+        {
+          "type": "continue_expr",
+          "named": true
+        },
+        {
+          "type": "field_expr",
+          "named": true
+        },
+        {
+          "type": "float_lit",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_lit",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "loop_expr",
+          "named": true
+        },
+        {
+          "type": "match_expr",
+          "named": true
+        },
+        {
+          "type": "paren_expr",
+          "named": true
+        },
+        {
+          "type": "path_expr",
+          "named": true
+        },
+        {
+          "type": "prefix_expr",
+          "named": true
+        },
+        {
+          "type": "ref_expr",
+          "named": true
+        },
+        {
+          "type": "return_expr",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
+          "named": true
+        },
+        {
+          "type": "try_expr",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unit_expr",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1679,19 +1943,11 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "mut_type",
           "named": true
         },
         {
           "type": "never_type",
-          "named": true
-        },
-        {
-          "type": "party",
           "named": true
         },
         {
@@ -1703,19 +1959,15 @@
           "named": true
         },
         {
-          "type": "self",
-          "named": true
-        },
-        {
           "type": "slice_type",
           "named": true
         },
         {
-          "type": "super",
+          "type": "tuple_type",
           "named": true
         },
         {
-          "type": "tuple_type",
+          "type": "type_ident",
           "named": true
         },
         {
@@ -1845,7 +2097,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -1866,6 +2118,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -1968,7 +2224,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -1989,6 +2245,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -2068,19 +2328,11 @@
             "named": true
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "mut_type",
             "named": true
           },
           {
             "type": "never_type",
-            "named": true
-          },
-          {
-            "type": "party",
             "named": true
           },
           {
@@ -2092,19 +2344,15 @@
             "named": true
           },
           {
-            "type": "self",
-            "named": true
-          },
-          {
             "type": "slice_type",
             "named": true
           },
           {
-            "type": "super",
+            "type": "tuple_type",
             "named": true
           },
           {
-            "type": "tuple_type",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -2186,19 +2434,11 @@
           "named": true
         },
         {
-          "type": "party",
-          "named": true
-        },
-        {
           "type": "prim_type",
           "named": true
         },
         {
           "type": "ref_type",
-          "named": true
-        },
-        {
-          "type": "self",
           "named": true
         },
         {
@@ -2210,11 +2450,11 @@
           "named": true
         },
         {
-          "type": "super",
+          "type": "tuple_type",
           "named": true
         },
         {
-          "type": "tuple_type",
+          "type": "type_ident",
           "named": true
         },
         {
@@ -2270,11 +2510,45 @@
         "required": true,
         "types": [
           {
+            "type": "path_expr",
+            "named": true
+          },
+          {
             "type": "type_ident",
             "named": true
           },
           {
             "type": "type_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "gen_type_turbo_fish",
+    "named": true,
+    "fields": {
+      "gen_args": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gen_args",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "type_ident",
             "named": true
           }
         ]
@@ -2382,7 +2656,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -2411,6 +2685,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -2543,7 +2821,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -2564,6 +2842,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -2640,19 +2922,11 @@
             "named": true
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "mut_type",
             "named": true
           },
           {
             "type": "never_type",
-            "named": true
-          },
-          {
-            "type": "party",
             "named": true
           },
           {
@@ -2664,19 +2938,15 @@
             "named": true
           },
           {
-            "type": "self",
-            "named": true
-          },
-          {
             "type": "slice_type",
             "named": true
           },
           {
-            "type": "super",
+            "type": "tuple_type",
             "named": true
           },
           {
-            "type": "tuple_type",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -2778,7 +3048,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -2799,6 +3069,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -2998,7 +3272,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -3019,6 +3293,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -3114,7 +3392,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -3135,6 +3413,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -3238,19 +3520,11 @@
             "named": true
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "mut_type",
             "named": true
           },
           {
             "type": "never_type",
-            "named": true
-          },
-          {
-            "type": "party",
             "named": true
           },
           {
@@ -3262,19 +3536,15 @@
             "named": true
           },
           {
-            "type": "self",
-            "named": true
-          },
-          {
             "type": "slice_type",
             "named": true
           },
           {
-            "type": "super",
+            "type": "tuple_type",
             "named": true
           },
           {
-            "type": "tuple_type",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -3360,7 +3630,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -3381,6 +3651,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -3537,7 +3811,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -3558,6 +3832,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -3722,19 +4000,11 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "mut_type",
           "named": true
         },
         {
           "type": "never_type",
-          "named": true
-        },
-        {
-          "type": "party",
           "named": true
         },
         {
@@ -3746,19 +4016,15 @@
           "named": true
         },
         {
-          "type": "self",
-          "named": true
-        },
-        {
           "type": "slice_type",
           "named": true
         },
         {
-          "type": "super",
+          "type": "tuple_type",
           "named": true
         },
         {
-          "type": "tuple_type",
+          "type": "type_ident",
           "named": true
         },
         {
@@ -3840,19 +4106,11 @@
             "named": true
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "mut_type",
             "named": true
           },
           {
             "type": "never_type",
-            "named": true
-          },
-          {
-            "type": "party",
             "named": true
           },
           {
@@ -3864,19 +4122,15 @@
             "named": true
           },
           {
-            "type": "self",
-            "named": true
-          },
-          {
             "type": "slice_type",
             "named": true
           },
           {
-            "type": "super",
+            "type": "tuple_type",
             "named": true
           },
           {
-            "type": "tuple_type",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -3968,7 +4222,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -3992,6 +4246,10 @@
           "named": true
         },
         {
+          "type": "struct_expr",
+          "named": true
+        },
+        {
           "type": "try_expr",
           "named": true
         },
@@ -4007,7 +4265,7 @@
     }
   },
   {
-    "type": "path_in_expr",
+    "type": "path_expr",
     "named": true,
     "fields": {
       "name": {
@@ -4025,6 +4283,10 @@
         "required": false,
         "types": [
           {
+            "type": "gen_type",
+            "named": true
+          },
+          {
             "type": "ident",
             "named": true
           },
@@ -4033,7 +4295,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -4046,16 +4308,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "turbofish_gen",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -4135,7 +4387,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -4156,6 +4408,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -4194,7 +4450,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -4285,7 +4541,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -4306,6 +4562,10 @@
           },
           {
             "type": "string_lit",
+            "named": true
+          },
+          {
+            "type": "struct_expr",
             "named": true
           },
           {
@@ -4388,19 +4648,11 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "mut_type",
           "named": true
         },
         {
           "type": "never_type",
-          "named": true
-        },
-        {
-          "type": "party",
           "named": true
         },
         {
@@ -4412,19 +4664,15 @@
           "named": true
         },
         {
-          "type": "self",
-          "named": true
-        },
-        {
           "type": "slice_type",
           "named": true
         },
         {
-          "type": "super",
+          "type": "tuple_type",
           "named": true
         },
         {
-          "type": "tuple_type",
+          "type": "type_ident",
           "named": true
         },
         {
@@ -4515,7 +4763,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -4536,6 +4784,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -4574,19 +4826,11 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "mut_type",
           "named": true
         },
         {
           "type": "never_type",
-          "named": true
-        },
-        {
-          "type": "party",
           "named": true
         },
         {
@@ -4598,19 +4842,15 @@
           "named": true
         },
         {
-          "type": "self",
-          "named": true
-        },
-        {
           "type": "slice_type",
           "named": true
         },
         {
-          "type": "super",
+          "type": "tuple_type",
           "named": true
         },
         {
-          "type": "tuple_type",
+          "type": "type_ident",
           "named": true
         },
         {
@@ -4727,6 +4967,40 @@
     }
   },
   {
+    "type": "struct_expr",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field_init_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gen_type_turbo_fish",
+            "named": true
+          },
+          {
+            "type": "type_ident",
+            "named": true
+          },
+          {
+            "type": "type_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "trait",
     "named": true,
     "fields": {
@@ -4803,10 +5077,6 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "lifetime",
           "named": true
         },
@@ -4819,10 +5089,6 @@
           "named": true
         },
         {
-          "type": "party",
-          "named": true
-        },
-        {
           "type": "prim_type",
           "named": true
         },
@@ -4831,19 +5097,15 @@
           "named": true
         },
         {
-          "type": "self",
-          "named": true
-        },
-        {
           "type": "slice_type",
           "named": true
         },
         {
-          "type": "super",
+          "type": "tuple_type",
           "named": true
         },
         {
-          "type": "tuple_type",
+          "type": "type_ident",
           "named": true
         },
         {
@@ -4934,7 +5196,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -4955,6 +5217,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -5049,7 +5315,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -5070,6 +5336,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -5108,19 +5378,11 @@
             "named": true
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "mut_type",
             "named": true
           },
           {
             "type": "never_type",
-            "named": true
-          },
-          {
-            "type": "party",
             "named": true
           },
           {
@@ -5132,19 +5394,15 @@
             "named": true
           },
           {
-            "type": "self",
-            "named": true
-          },
-          {
             "type": "slice_type",
             "named": true
           },
           {
-            "type": "super",
+            "type": "tuple_type",
             "named": true
           },
           {
-            "type": "tuple_type",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -5190,19 +5448,11 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "mut_type",
           "named": true
         },
         {
           "type": "never_type",
-          "named": true
-        },
-        {
-          "type": "party",
           "named": true
         },
         {
@@ -5214,19 +5464,15 @@
           "named": true
         },
         {
-          "type": "self",
-          "named": true
-        },
-        {
           "type": "slice_type",
           "named": true
         },
         {
-          "type": "super",
+          "type": "tuple_type",
           "named": true
         },
         {
-          "type": "tuple_type",
+          "type": "type_ident",
           "named": true
         },
         {
@@ -5238,22 +5484,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "turbofish_gen",
-    "named": true,
-    "fields": {
-      "gen_args": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "gen_args",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
@@ -5297,19 +5527,11 @@
             "named": true
           },
           {
-            "type": "ident",
-            "named": true
-          },
-          {
             "type": "mut_type",
             "named": true
           },
           {
             "type": "never_type",
-            "named": true
-          },
-          {
-            "type": "party",
             "named": true
           },
           {
@@ -5321,19 +5543,15 @@
             "named": true
           },
           {
-            "type": "self",
-            "named": true
-          },
-          {
             "type": "slice_type",
             "named": true
           },
           {
-            "type": "super",
+            "type": "tuple_type",
             "named": true
           },
           {
-            "type": "tuple_type",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -5379,19 +5597,11 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "mut_type",
           "named": true
         },
         {
           "type": "never_type",
-          "named": true
-        },
-        {
-          "type": "party",
           "named": true
         },
         {
@@ -5403,15 +5613,7 @@
           "named": true
         },
         {
-          "type": "self",
-          "named": true
-        },
-        {
           "type": "slice_type",
-          "named": true
-        },
-        {
-          "type": "super",
           "named": true
         },
         {
@@ -5442,17 +5644,17 @@
         "required": true,
         "types": [
           {
-            "type": "ident",
+            "type": "type_ident",
             "named": true
           }
         ]
       },
       "path": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "gen_args",
+            "type": "gen_type",
             "named": true
           },
           {
@@ -5464,7 +5666,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -5473,14 +5675,6 @@
           },
           {
             "type": "super",
-            "named": true
-          },
-          {
-            "type": "turbofish_gen",
-            "named": true
-          },
-          {
-            "type": "type_ident",
             "named": true
           }
         ]
@@ -5514,7 +5708,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -5545,7 +5739,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -5613,7 +5807,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -5649,7 +5843,7 @@
             "named": true
           },
           {
-            "type": "path_in_expr",
+            "type": "path_expr",
             "named": true
           },
           {
@@ -5676,7 +5870,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -5823,7 +6017,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -5844,6 +6038,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -5938,7 +6136,7 @@
           "named": true
         },
         {
-          "type": "path_in_expr",
+          "type": "path_expr",
           "named": true
         },
         {
@@ -5959,6 +6157,10 @@
         },
         {
           "type": "string_lit",
+          "named": true
+        },
+        {
+          "type": "struct_expr",
           "named": true
         },
         {
@@ -6071,6 +6273,10 @@
   },
   {
     "type": "..",
+    "named": false
+  },
+  {
+    "type": "...",
     "named": false
   },
   {
