@@ -341,7 +341,6 @@ module.exports = grammar({
         /////////////////
         _expr: $ => choice(
             $._literal,
-            $.neg_lit,
 
             prec.left($.ident),
             alias(choice(...prim_types), $.ident),
@@ -352,6 +351,7 @@ module.exports = grammar({
             $.block_expr,
 
             $.binop_expr,
+            $.unary_expr,
             $.member_access_expr,
 
             $.assign_expr,
@@ -400,6 +400,11 @@ module.exports = grammar({
             field('op', ops.length > 1 ? choice(...ops) : ops[0]),
             field('rhs', $._expr),
         )))),
+
+        unary_expr: $ => prec(PREC.unary, seq(
+            choice('-', '*', '!'),
+            $._expr,
+        )),
 
         member_access_expr: $ => prec.left(PREC.field, seq(
             field('lhs', $._expr),
