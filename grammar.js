@@ -364,7 +364,6 @@ module.exports = grammar({
         ),
 
         // Struct //
-        // TODO: Finish
         struct: $ => seq(
             'struct',
             field('name', $._type_ident),
