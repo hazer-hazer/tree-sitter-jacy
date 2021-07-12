@@ -335,7 +335,6 @@ module.exports = grammar({
         ),
 
         // Type alias //
-        // TODO: Finish
         type_alias: $ => seq(
             'type',
         ),
@@ -353,9 +352,20 @@ module.exports = grammar({
         ),
 
         // Trait //
-        // TODO: Finish
         trait: $ => seq(
             'trait',
+            field('name', $._type_ident),
+            field('gen_params', optional($.gen_params)),
+            field('super_traits', $.super_traits),
+            field('body', $.member_list),
+        ),
+
+        super_traits: $ => seq(
+            ':',
+            delim1('+', choice(
+                $._type,
+                $.lifetime,
+            )),
         ),
 
         ////////////////
