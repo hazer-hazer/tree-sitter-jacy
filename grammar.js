@@ -339,6 +339,13 @@ module.exports = grammar({
             'type',
         ),
 
+        assoc_type: $ => seq(
+            'type',
+            field('name', $._type_ident),
+            field('bounds', $.trait_bounds),
+            ';',
+        ),
+
         // Mod //
         // TODO: Finish
         mod: $ => seq(
@@ -356,11 +363,11 @@ module.exports = grammar({
             'trait',
             field('name', $._type_ident),
             field('gen_params', optional($.gen_params)),
-            field('super_traits', $.super_traits),
+            field('bounds', $.trait_bounds),
             field('body', $.member_list),
         ),
 
-        super_traits: $ => seq(
+        trait_bounds: $ => seq(
             ':',
             delim1('+', choice(
                 $._type,
