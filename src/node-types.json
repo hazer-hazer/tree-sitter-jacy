@@ -4507,7 +4507,42 @@
   {
     "type": "struct",
     "named": true,
-    "fields": {}
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "field_list",
+            "named": true
+          },
+          {
+            "type": "tuple_field_list",
+            "named": true
+          }
+        ]
+      },
+      "gen_params": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "gen_params",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_ident",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "trait_bounds",
@@ -5147,6 +5182,11 @@
     "fields": {}
   },
   {
+    "type": "vis_modifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "while_let_stmt",
     "named": true,
     "fields": {
@@ -5712,6 +5752,10 @@
     "named": true
   },
   {
+    "type": "pub",
+    "named": false
+  },
+  {
     "type": "ref",
     "named": false
   },
@@ -5745,10 +5789,6 @@
   },
   {
     "type": "type_ident",
-    "named": true
-  },
-  {
-    "type": "vis_modifier",
     "named": true
   },
   {

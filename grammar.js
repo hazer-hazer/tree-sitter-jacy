@@ -366,6 +366,17 @@ module.exports = grammar({
         // TODO: Finish
         struct: $ => seq(
             'struct',
+            field('name', $._type_ident),
+            field('gen_params', optional($.gen_params)),
+            either_semi(
+                choice(
+                    field('body', $.field_list),
+                    seq(
+                        field('body', $.tuple_field_list),
+                        ';'
+                    ),
+                ),
+            ),
         ),
 
         // Trait //
