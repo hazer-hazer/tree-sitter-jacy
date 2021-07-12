@@ -381,7 +381,10 @@ module.exports = grammar({
 
         _neg_lit: $ => seq(
             '-',
-            $._literal,
+            choice(
+                $.int_lit,
+                $.float_lit,
+            ),
         ),
 
         paren_expr: $ => seq(
