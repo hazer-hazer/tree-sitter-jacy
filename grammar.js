@@ -272,7 +272,7 @@ module.exports = grammar({
         func: $ => seq(
             'func',
             field('name', $.ident),
-            field('generics', optional($.gen_params)),
+            field('gen_params', optional($.gen_params)),
             field('params', optional($._func_param_list)),
             field('return_type', optional($._type_anno)),
             field('body', $._func_body),
@@ -547,7 +547,7 @@ module.exports = grammar({
 
         turbofish_gen: $ => seq(
             '::',
-            field('generics', $.gen_args),
+            field('gen_args', $.gen_args),
         ),
 
         // Control-Flow //
