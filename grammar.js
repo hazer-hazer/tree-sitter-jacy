@@ -353,6 +353,7 @@ module.exports = grammar({
             $.infix_expr,
             $.prefix_expr,
             $.member_access_expr,
+            $.call_expr,
 
             $.assign_expr,
 
@@ -403,6 +404,24 @@ module.exports = grammar({
             '.',
             field('rhs', $._expr),
         )),
+
+        call_expr: $ => prec(PREC.call, seq(
+            field('func', $._expr),
+            field('args', $.args),
+        )),
+
+        args: $ => seq(
+            '(',
+            delim(',', seq(
+                opt_seq(
+                    field('name', $.ident),
+                    ':',
+                ),
+                field('value', $._expr),
+            )),
+            optional(','),
+            ')',
+        ),
 
         assign_expr: $ => prec.left(PREC.assign, seq(
             field('lhs', $._expr),
