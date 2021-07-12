@@ -284,7 +284,7 @@ module.exports = grammar({
         param: $ => seq(
             optional('mut'),
             field('pat', $._pattern),
-            field('type', opt_seq($._type_anno)),
+            field('type', optional($._type_anno)),
         ),
 
         _func_body: $ => either_semi(choice(
@@ -351,7 +351,7 @@ module.exports = grammar({
         assoc_type: $ => seq(
             'type',
             field('name', $._type_ident),
-            field('bounds', $.trait_bounds),
+            field('bounds', optional($.trait_bounds)),
             ';',
         ),
 
@@ -688,13 +688,14 @@ module.exports = grammar({
         _type: $ => choice(
             alias(choice(...prim_types), $.prim_type),
             $.unit_type,
-            $.parent_type,
+            // $.parent_type,
             $.tuple_type,
             $.fn_type,
             $.slice_type,
             $.array_type,
             $.ref_type,
             $.mut_type,
+            $._path_ident,
             $.type_path,
             $.gen_type,
             $.never_type,
@@ -706,27 +707,15 @@ module.exports = grammar({
 
         tuple_type: $ => seq(
             '(',
-            choice(
-                $._type,
-                ',',
-            ),
-            seq(
-                delim1(
-                    ',',
-                    $._type,
-                ),
-                ',',
-            ),
+            delim1(',', $._type),
+            trail_comma,
             ')',
         ),
 
         fn_type: $ => seq(
-            '(',
-            field('params', repeat(seq(
-                $.ident,
-                optional(seq(':', $._type)),
-            ))),
-            ')',
+            prec(PREC.call, 
+                field('params', $.tuple_type),
+            ),
             '->',
             $._type,
         ),
