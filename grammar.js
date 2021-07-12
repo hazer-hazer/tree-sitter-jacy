@@ -206,16 +206,30 @@ module.exports = grammar({
 
         const_param: $ => seq('const', $.ident, $._type_anno, opt_seq('=', $._expr)),
 
+        _opt_vis: $ => optional(prec.right('pub')),
+
         field_list: $ => seq(
             '{',
             delim(',', $.field),
+            trail_comma,
             '}',
         ),
 
         field: $ => seq(
+            $._opt_vis,
             field('name', $._field_ident),
             ':',
             field('type', $._type),
+        ),
+
+        tuple_field_list: $ => seq(
+            '(',
+            delim(',', seq(
+                $._opt_vis,
+                field('type', $._type),
+            )),
+            trail_comma,
+            ')',
         ),
 
         // Comments //
@@ -232,7 +246,7 @@ module.exports = grammar({
         // Items //
         ///////////
         _item: $ => seq(
-            optional($.visibility),
+            $._opt_vis,
             choice(
                 $.func,
                 $.enum,
@@ -242,8 +256,6 @@ module.exports = grammar({
                 $.struct,
             ),
         ),
-
-        visibility: $ => prec.right('pub'),
 
         // Func //
         func: $ => seq(
