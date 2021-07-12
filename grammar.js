@@ -208,7 +208,7 @@ module.exports = grammar({
             )
         ),
 
-        type_param: $ => seq($.ident, optional($._type_anno), opt_seq('=', $._type)),
+        type_param: $ => seq($._type_ident, optional($._type_anno), opt_seq('=', $._type)),
 
         const_param: $ => seq('const', $.ident, $._type_anno, opt_seq('=', $._expr)),
 
@@ -549,6 +549,7 @@ module.exports = grammar({
             $.mut_type,
             $.type_path,
             $.gen_type,
+            $._type_ident,
         ),
 
         unit_type: $ => seq('(', ')'),
