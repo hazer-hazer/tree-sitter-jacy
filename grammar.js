@@ -257,6 +257,12 @@ module.exports = grammar({
             ),
         ),
 
+        member_list: $ => seq(
+            '{',
+            repeat($._item),
+            '}',
+        ),
+
         // Func //
         func: $ => seq(
             'func',
@@ -313,9 +319,19 @@ module.exports = grammar({
         ),
 
         // Impl //
-        // TODO: Finish
         impl: $ => seq(
             'impl',
+            field('gen_params', optional($.gen_params)),
+            opt_seq(
+                field('trait', choice(
+                    $._type_ident,
+                    $.type_path,
+                    $.gen_type,
+                )),
+                'for',
+            ),
+            field('type', $._type),
+            field('body', $.member_list),
         ),
 
         // Type alias //
