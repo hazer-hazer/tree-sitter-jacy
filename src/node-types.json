@@ -499,32 +499,6 @@
     }
   },
   {
-    "type": "assoc_type",
-    "named": true,
-    "fields": {
-      "bounds": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "trait_bounds",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "type_ident",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "bind_pat",
     "named": true,
     "fields": {},
@@ -577,10 +551,6 @@
       "types": [
         {
           "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "assoc_type",
           "named": true
         },
         {
@@ -713,10 +683,6 @@
         },
         {
           "type": "use_decl",
-          "named": true
-        },
-        {
-          "type": "vis_modifier",
           "named": true
         },
         {
@@ -3460,10 +3426,6 @@
       "required": false,
       "types": [
         {
-          "type": "assoc_type",
-          "named": true
-        },
-        {
           "type": "enum",
           "named": true
         },
@@ -3489,10 +3451,6 @@
         },
         {
           "type": "use_decl",
-          "named": true
-        },
-        {
-          "type": "vis_modifier",
           "named": true
         }
       ]
@@ -4494,10 +4452,6 @@
       "required": false,
       "types": [
         {
-          "type": "assoc_type",
-          "named": true
-        },
-        {
           "type": "enum",
           "named": true
         },
@@ -4523,10 +4477,6 @@
         },
         {
           "type": "use_decl",
-          "named": true
-        },
-        {
-          "type": "vis_modifier",
           "named": true
         }
       ]

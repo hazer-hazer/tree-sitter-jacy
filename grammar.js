@@ -246,21 +246,15 @@ module.exports = grammar({
         // Items //
         ///////////
         _item: $ => choice(
-            // Items with visibility
-            seq(
-                optional($.vis_modifier),
-                choice(
-                    $.func,
-                    $.enum,
-                    $.impl,
-                    $.type_alias,
-                    $.mod,
-                    $.struct,
-                    $.use_decl,
-                ),
+            choice(
+                $.func,
+                $.enum,
+                $.impl,
+                $.type_alias,
+                $.mod,
+                $.struct,
+                $.use_decl,
             ),
-            // Items without visibility
-            $.assoc_type,
         ),
 
         member_list: $ => seq(
