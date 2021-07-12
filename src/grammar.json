@@ -954,6 +954,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "assoc_type"
+        },
+        {
+          "type": "SYMBOL",
           "name": "mod"
         },
         {
@@ -963,6 +967,10 @@
         {
           "type": "SYMBOL",
           "name": "use_decl"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "trait"
         }
       ]
     },

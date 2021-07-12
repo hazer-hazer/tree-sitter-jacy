@@ -499,6 +499,32 @@
     }
   },
   {
+    "type": "assoc_type",
+    "named": true,
+    "fields": {
+      "bounds": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "trait_bounds",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_ident",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "bind_pat",
     "named": true,
     "fields": {},
@@ -551,6 +577,10 @@
       "types": [
         {
           "type": "assign_expr",
+          "named": true
+        },
+        {
+          "type": "assoc_type",
           "named": true
         },
         {
@@ -663,6 +693,10 @@
         },
         {
           "type": "struct",
+          "named": true
+        },
+        {
+          "type": "trait",
           "named": true
         },
         {
@@ -3450,6 +3484,10 @@
       "required": false,
       "types": [
         {
+          "type": "assoc_type",
+          "named": true
+        },
+        {
           "type": "enum",
           "named": true
         },
@@ -3467,6 +3505,10 @@
         },
         {
           "type": "struct",
+          "named": true
+        },
+        {
+          "type": "trait",
           "named": true
         },
         {
@@ -4486,6 +4528,10 @@
       "required": false,
       "types": [
         {
+          "type": "assoc_type",
+          "named": true
+        },
+        {
           "type": "enum",
           "named": true
         },
@@ -4503,6 +4549,10 @@
         },
         {
           "type": "struct",
+          "named": true
+        },
+        {
+          "type": "trait",
           "named": true
         },
         {
@@ -4535,6 +4585,62 @@
           },
           {
             "type": "tuple_field_list",
+            "named": true
+          }
+        ]
+      },
+      "gen_params": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "gen_params",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_ident",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "vis_modifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "trait",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "member_list",
+            "named": true
+          }
+        ]
+      },
+      "bounds": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "trait_bounds",
             "named": true
           }
         ]
