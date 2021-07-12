@@ -588,15 +588,9 @@ module.exports = grammar({
         path_in_expr: $ => seq(
             field('path', optional(
                 $._path,
+                alias($.gen_type_turbo_fish, $.gen_type),
             )),
-            optional($.turbofish_gen),
-            '::',
             field('name', $.ident),
-        ),
-
-        turbofish_gen: $ => seq(
-            '::',
-            field('gen_args', $.gen_args),
         ),
 
         // Control-Flow //
@@ -693,7 +687,7 @@ module.exports = grammar({
         type_path_in_expr: $ => prec(-2, seq(
             field('path', optional(choice(
                 $._path,
-                alias($.gen_type)
+                $.gen_type
             ))),
         )),
 
