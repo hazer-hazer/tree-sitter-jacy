@@ -214,14 +214,19 @@ module.exports = grammar({
         ///////////
         // Items //
         ///////////
-        _item: $ => choice(
-            $.func,
-            $.enum,
-            $.impl,
-            $.type_alias,
-            $.mod,
-            $.struct,
+        _item: $ => seq(
+            optional($.visibility),
+            choice(
+                $.func,
+                $.enum,
+                $.impl,
+                $.type_alias,
+                $.mod,
+                $.struct,
+            ),
         ),
+
+        visibility: $ => 'pub',
 
         // Func //
         func: $ => seq(
