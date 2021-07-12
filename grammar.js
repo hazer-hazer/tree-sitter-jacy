@@ -165,8 +165,12 @@ module.exports = grammar({
 
         _path: $ => choice(
             alias(choice(...prim_types), $.ident),
-            $._path_ident,
             $.path_in_expr,
+            $.ident,
+
+            $.super,
+            $.self,
+            $.party,
         ),
 
         gen_args: $ => seq(
@@ -183,13 +187,6 @@ module.exports = grammar({
         ),
 
         lifetime: $ => seq('\'', $.ident),
-
-        _path_ident: $ => choice(
-            $.super,
-            $.self,
-            $.party,
-            $.ident,
-        ),
 
         gen_params: $ => choice(
             seq('<', '>'),
@@ -586,10 +583,10 @@ module.exports = grammar({
         )),
 
         path_in_expr: $ => seq(
-            field('path', optional(
+            field('path', optional(choice(
                 $._path,
                 alias($.gen_type_turbo_fish, $.gen_type),
-            )),
+            ))),
             field('name', $.ident),
         ),
 
@@ -720,13 +717,13 @@ module.exports = grammar({
             alias(choice(...prim_types), $.prim_type),
             $.unit_type,
             // $.parent_type,
+            $._type_ident,
             $.tuple_type,
             $.fn_type,
             $.slice_type,
             $.array_type,
             $.ref_type,
             $.mut_type,
-            $._path_ident,
             $.type_path,
             $.gen_type,
             $.never_type,
@@ -762,7 +759,8 @@ module.exports = grammar({
         type_path: $ => seq(
             field('path', optional(choice(
                 $._path,
-                $.turbofish_gen,
+                alias($.gen_type_turbo_fish, $.gen_type),
+                $.gen_type,
                 seq($._type_ident, $.gen_args),
             ))),
             '::',
