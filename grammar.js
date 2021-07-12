@@ -486,12 +486,12 @@ module.exports = grammar({
             $._expr,
             either_semi(
                 '{',
-                delim(',', seq(
+                delim(',', alias(seq(
                     optional('|'),
                     delim('|', $._pattern),
                     '=>',
                     $._expr
-                )),
+                ), $.match_arm)),
                 trail_comma,
                 '}',
             )

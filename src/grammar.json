@@ -1392,6 +1392,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "try_expr"
+        },
+        {
+          "type": "SYMBOL",
           "name": "assign_expr"
         },
         {
@@ -2089,6 +2093,32 @@
               "type": "SYMBOL",
               "name": "args"
             }
+          }
+        ]
+      }
+    },
+    "try_expr": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "?"
+              },
+              {
+                "type": "STRING",
+                "value": "!"
+              }
+            ]
           }
         ]
       }
