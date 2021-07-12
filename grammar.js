@@ -408,6 +408,11 @@ module.exports = grammar({
             '}',
         ),
 
+        use_all: $ => seq(
+            opt_seq($._path, '::'),
+            '*'
+        ),
+
         // Trait //
         trait: $ => seq(
             'trait',
