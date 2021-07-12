@@ -264,21 +264,17 @@
       "type": "STRING",
       "value": "self"
     },
+    "super": {
+      "type": "STRING",
+      "value": "super"
+    },
+    "party": {
+      "type": "STRING",
+      "value": "party"
+    },
     "_path": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "self"
-        },
-        {
-          "type": "STRING",
-          "value": "super"
-        },
-        {
-          "type": "STRING",
-          "value": "party"
-        },
         {
           "type": "ALIAS",
           "content": {
@@ -367,7 +363,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "ident"
+          "name": "_path_ident"
         },
         {
           "type": "SYMBOL",
@@ -517,16 +513,16 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "super"
+          "type": "SYMBOL",
+          "name": "super"
         },
         {
           "type": "SYMBOL",
           "name": "self"
         },
         {
-          "type": "STRING",
-          "value": "party"
+          "type": "SYMBOL",
+          "name": "party"
         },
         {
           "type": "SYMBOL",

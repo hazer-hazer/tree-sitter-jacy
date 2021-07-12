@@ -3565,7 +3565,7 @@
           },
           {
             "type": "party",
-            "named": false
+            "named": true
           },
           {
             "type": "path_in_expr",
@@ -3577,7 +3577,7 @@
           },
           {
             "type": "super",
-            "named": false
+            "named": true
           }
         ]
       }
@@ -3710,7 +3710,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "ident",
@@ -3721,11 +3721,19 @@
           "named": true
         },
         {
+          "type": "party",
+          "named": true
+        },
+        {
           "type": "path_in_expr",
           "named": true
         },
         {
           "type": "self",
+          "named": true
+        },
+        {
+          "type": "super",
           "named": true
         }
       ]
@@ -4557,7 +4565,7 @@
           },
           {
             "type": "party",
-            "named": false
+            "named": true
           },
           {
             "type": "path_in_expr",
@@ -4569,7 +4577,7 @@
           },
           {
             "type": "super",
-            "named": false
+            "named": true
           },
           {
             "type": "turbofish_gen",
@@ -5157,7 +5165,7 @@
   },
   {
     "type": "party",
-    "named": false
+    "named": true
   },
   {
     "type": "prim_type",
@@ -5185,7 +5193,7 @@
   },
   {
     "type": "super",
-    "named": false
+    "named": true
   },
   {
     "type": "trait",

@@ -24,14 +24,11 @@
 "mut" @keyword
 "return" @keyword
 "or" @keyword
-"party" @keyword
 ; "pri" @keyword
 "pub" @keyword
 "ref" @keyword
-"self" @keyword
 ; "static" @keyword
 "struct" @keyword
-"super" @keyword
 "trait" @keyword
 "true" @keyword
 "type" @keyword
@@ -118,9 +115,10 @@
 (type_path (ident) @type)
 
 ; Other
-(line_comment) @comment
-(block_comment) @comment
+(comment) @comment
 
 (lifetime (ident) @label)
 
 (self) @variable.builtin
+(super) @variable.builtin
+(party) @variable.builtin
