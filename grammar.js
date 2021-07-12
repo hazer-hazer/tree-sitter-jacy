@@ -381,7 +381,7 @@ module.exports = grammar({
         ),
 
         // Use decl //
-        ues_decl: $ => seq(
+        use_decl: $ => seq(
             'use',
             field('use_tree', $._use_tree),
             ';',

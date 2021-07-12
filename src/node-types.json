@@ -712,6 +712,10 @@
           "named": true
         },
         {
+          "type": "use_decl",
+          "named": true
+        },
+        {
           "type": "vis_modifier",
           "named": true
         },
@@ -3484,6 +3488,10 @@
           "named": true
         },
         {
+          "type": "use_decl",
+          "named": true
+        },
+        {
           "type": "vis_modifier",
           "named": true
         }
@@ -3493,7 +3501,28 @@
   {
     "type": "mod",
     "named": true,
-    "fields": {}
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "member_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "mut_pat",
@@ -4493,6 +4522,10 @@
           "named": true
         },
         {
+          "type": "use_decl",
+          "named": true
+        },
+        {
           "type": "vis_modifier",
           "named": true
         }
@@ -5182,6 +5215,197 @@
     "fields": {}
   },
   {
+    "type": "use_all",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "party",
+          "named": true
+        },
+        {
+          "type": "path_in_expr",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "use_decl",
+    "named": true,
+    "fields": {
+      "use_tree": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "party",
+            "named": true
+          },
+          {
+            "type": "path_in_expr",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "use_all",
+            "named": true
+          },
+          {
+            "type": "use_rebind",
+            "named": true
+          },
+          {
+            "type": "use_specific",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "use_rebind",
+    "named": true,
+    "fields": {
+      "binding": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_",
+            "named": false
+          },
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "party",
+            "named": true
+          },
+          {
+            "type": "path_in_expr",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "use_specific",
+    "named": true,
+    "fields": {
+      "path": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "party",
+            "named": true
+          },
+          {
+            "type": "path_in_expr",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "party",
+          "named": true
+        },
+        {
+          "type": "path_in_expr",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "super",
+          "named": true
+        },
+        {
+          "type": "use_all",
+          "named": true
+        },
+        {
+          "type": "use_rebind",
+          "named": true
+        },
+        {
+          "type": "use_specific",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "vis_modifier",
     "named": true,
     "fields": {}
@@ -5448,6 +5672,11 @@
     }
   },
   {
+    "type": "wildcard",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "!",
     "named": false
   },
@@ -5640,6 +5869,10 @@
     "named": false
   },
   {
+    "type": "_",
+    "named": false
+  },
+  {
     "type": "and",
     "named": false
   },
@@ -5792,12 +6025,12 @@
     "named": true
   },
   {
-    "type": "while",
+    "type": "use",
     "named": false
   },
   {
-    "type": "wildcard",
-    "named": true
+    "type": "while",
+    "named": false
   },
   {
     "type": "{",
