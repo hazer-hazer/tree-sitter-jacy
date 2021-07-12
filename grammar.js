@@ -259,7 +259,7 @@ module.exports = grammar({
             $.ident,
             either_semi(seq('{',
                 repeat(choice(
-                    seq($.ident, opt_seq('=', $._expr)),
+                    seq($._type_ident, opt_seq('=', $._expr)),
                 )),
             '}')),
         ),
@@ -594,7 +594,7 @@ module.exports = grammar({
             field('path', optional(choice(
                 $._path,
                 $.turbofish_gen,
-                seq($.ident, $.gen_args),
+                seq($._type_ident, $.gen_args),
             ))),
             '::',
             field('name', $.ident),
@@ -602,7 +602,7 @@ module.exports = grammar({
 
         gen_type: $ => prec(1, seq(
             field('type', choice(
-                $.ident,
+                $._type_ident,
                 $.type_path,
             )),
             field('gen_args', $.gen_args),
