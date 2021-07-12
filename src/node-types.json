@@ -5731,26 +5731,6 @@
         "required": true,
         "types": [
           {
-            "type": "ident",
-            "named": true
-          },
-          {
-            "type": "party",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "self",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          },
-          {
             "type": "use_all",
             "named": true
           },
@@ -5861,26 +5841,6 @@
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "ident",
-          "named": true
-        },
-        {
-          "type": "party",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "self",
-          "named": true
-        },
-        {
-          "type": "super",
-          "named": true
-        },
         {
           "type": "use_all",
           "named": true

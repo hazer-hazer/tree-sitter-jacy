@@ -384,7 +384,6 @@ module.exports = grammar({
         ),
 
         _use_tree: $ => choice(
-            $._path,
             $.use_rebind,
             $.use_specific,
             $.use_all,

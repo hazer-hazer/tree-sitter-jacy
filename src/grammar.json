@@ -1723,10 +1723,6 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_path"
-        },
-        {
-          "type": "SYMBOL",
           "name": "use_rebind"
         },
         {
@@ -3817,57 +3813,6 @@
         }
       ]
     },
-    "type_path": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "path",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "_path"
-                  },
-                  {
-                    "type": "ALIAS",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "gen_type_turbo_fish"
-                    },
-                    "named": true,
-                    "value": "gen_type"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "gen_type"
-                  }
-                ]
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "::"
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_type_ident"
-          }
-        }
-      ]
-    },
     "type_path_in_expr": {
       "type": "PREC",
       "value": -2,
@@ -4324,6 +4269,57 @@
         {
           "type": "SYMBOL",
           "name": "_type"
+        }
+      ]
+    },
+    "type_path": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "path",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_path"
+                  },
+                  {
+                    "type": "ALIAS",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "gen_type_turbo_fish"
+                    },
+                    "named": true,
+                    "value": "gen_type"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "gen_type"
+                  }
+                ]
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "::"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_type_ident"
+          }
         }
       ]
     },
