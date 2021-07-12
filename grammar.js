@@ -360,7 +360,7 @@ module.exports = grammar({
 
             $.infix_expr,
             $.prefix_expr,
-            $.member_access_expr,
+            $.field_expr,
             $.call_expr,
             $.try_expr,
 
@@ -408,10 +408,13 @@ module.exports = grammar({
             $._expr,
         )),
 
-        member_access_expr: $ => prec.left(PREC.field, seq(
-            field('lhs', $._expr),
+        field_expr: $ => prec.left(PREC.field, seq(
+            field('expr', $._expr),
             '.',
-            field('rhs', $._expr),
+            field('field', choice(
+                $._expr,
+                $.int_lit, // Tuple access
+            )),
         )),
 
         call_expr: $ => prec(PREC.call, seq(

@@ -26,13 +26,12 @@
 "or" @keyword
 "party" @keyword
 ; "pri" @keyword
-; "pub" @keyword
+"pub" @keyword
 "ref" @keyword
 "self" @keyword
 ; "static" @keyword
 "struct" @keyword
 "super" @keyword
-; "this" @keyword
 "trait" @keyword
 "true" @keyword
 "type" @keyword
@@ -85,7 +84,13 @@
     "<" @punctuation.bracket
     ">" @punctuation.bracket)
 
-; Paths
+;;; Specific rules for identifiers
+
+; CAPS identifiers treated as constants
+((ident) @constant
+    (#match? @constant "^[A-Z][A-Z\\d_]+$"))
+
+; PascalCase identifiers in paths treated as types
 ((path_in_expr
     path: (ident) @type)
     (#match? @type "^[A-Z]"))
@@ -94,3 +99,10 @@
     path: (path_in_expr
     name: (ident) @type))
     (#match? @type "^[A-Z]"))
+
+(call_expr
+    function: (ident) @function)
+
+(call_expr
+    function: (member_access_expr
+        rhs: ()))
