@@ -621,7 +621,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "ident"
+          "name": "_type_ident"
         },
         {
           "type": "CHOICE",
@@ -3389,6 +3389,15 @@
     "wildcard": {
       "type": "STRING",
       "value": "_"
+    },
+    "_type_ident": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "ident"
+      },
+      "named": true,
+      "value": "type_ident"
     }
   },
   "extras": [
@@ -3409,7 +3418,9 @@
   ],
   "precedences": [],
   "externals": [],
-  "inline": [],
+  "inline": [
+    "_type_ident"
+  ],
   "supertypes": []
 }
 

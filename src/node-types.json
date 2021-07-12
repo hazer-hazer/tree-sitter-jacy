@@ -4295,10 +4295,6 @@
           "named": true
         },
         {
-          "type": "ident",
-          "named": true
-        },
-        {
           "type": "mut_type",
           "named": true
         },
@@ -4320,6 +4316,10 @@
         },
         {
           "type": "tuple_type",
+          "named": true
+        },
+        {
+          "type": "type_ident",
           "named": true
         },
         {
@@ -4969,6 +4969,10 @@
   {
     "type": "type",
     "named": false
+  },
+  {
+    "type": "type_ident",
+    "named": true
   },
   {
     "type": "while",

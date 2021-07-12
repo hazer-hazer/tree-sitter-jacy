@@ -549,7 +549,6 @@ module.exports = grammar({
             $.mut_type,
             $.type_path,
             $.gen_type,
-            $._type_ident,
         ),
 
         unit_type: $ => seq('(', ')'),
