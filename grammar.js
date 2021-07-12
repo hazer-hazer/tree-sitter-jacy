@@ -111,6 +111,10 @@ module.exports = grammar({
 
     word: $ => $.ident,
 
+    inline: $ => [
+        $._type_ident,
+    ],
+
     rules: {
         source_file: $ => repeat($._item),
 
@@ -663,5 +667,8 @@ module.exports = grammar({
         ),
 
         wildcard: $ => '_',
+
+        // Aliases
+        _type_ident: $ => alias($.ident, $.type_ident),
     },
 })
