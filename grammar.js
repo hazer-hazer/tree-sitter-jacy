@@ -350,8 +350,8 @@ module.exports = grammar({
 
             $.block_expr,
 
-            $.binop_expr,
-            $.unary_expr,
+            $.infix_expr,
+            $.prefix_expr,
             $.member_access_expr,
 
             $.assign_expr,
@@ -387,13 +387,13 @@ module.exports = grammar({
 
         block_expr: $ => seq('{', repeat($._statement), '}'),
 
-        binop_expr: $ => choice(...BINOPS.map((ops, i) => prec.left(i + BINOPS_START_PREC, seq(
+        infix_expr: $ => choice(...BINOPS.map((ops, i) => prec.left(i + BINOPS_START_PREC, seq(
             field('lhs', $._expr),
             field('op', ops.length > 1 ? choice(...ops) : ops[0]),
             field('rhs', $._expr),
         )))),
 
-        unary_expr: $ => prec(PREC.unary, seq(
+        prefix_expr: $ => prec(PREC.unary, seq(
             choice('-', '*', '!'),
             $._expr,
         )),
