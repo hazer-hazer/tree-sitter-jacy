@@ -110,7 +110,7 @@ module.exports = grammar({
 
     conflicts: $ => [
         [$._type, $._path],
-        [$.scoped_identifier, $.type_path],
+        [$.path_expr, $.type_path],
     ],
 
     word: $ => $.ident,
@@ -165,7 +165,7 @@ module.exports = grammar({
 
         _path: $ => choice(
             alias(choice(...prim_types), $.ident),
-            $.scoped_identifier,
+            $.path_expr,
             $.ident,
 
             $.super,
@@ -481,7 +481,7 @@ module.exports = grammar({
 
             prec.left($.ident),
             alias(choice(...prim_types), $.ident),
-            $.scoped_identifier,
+            $.path_expr,
 
             $.self,
 
@@ -582,7 +582,7 @@ module.exports = grammar({
             field('rhs', $._expr),
         )),
 
-        scoped_identifier: $ => seq(
+        path_expr: $ => seq(
             field('path', optional(choice(
                 $._path,
                 alias($.gen_type_turbo_fish, $.gen_type),
@@ -661,7 +661,7 @@ module.exports = grammar({
         struct_expr: $ => seq(
             field('name', choice(
                 $._type_ident,
-                alias($.scoped_identifier, $.type_path),
+                alias($.type_path_in_expr, $.type_path),
                 $.gen_type_turbo_fish,
             )),
             field('body', $.field_init_list),
@@ -682,10 +682,20 @@ module.exports = grammar({
             '}',
         ),
 
-        type_scoped_identifier: $ => prec(-2, seq(
+        type_path: $ => seq(
             field('path', optional(choice(
                 $._path,
-                $.gen_type
+                alias($.gen_type_turbo_fish, $.gen_type),
+                $.gen_type,
+            ))),
+            '::',
+            field('name', $._type_ident),
+        ),
+
+        type_path_in_expr: $ => prec(-2, seq(
+            field('path', optional(choice(
+                $._path,
+                alias($.gen_type_turbo_fish, $.gen_type),
             ))),
             '::',
             field('name', $._type_ident),
@@ -778,7 +788,7 @@ module.exports = grammar({
         gen_type_turbo_fish: $ => prec(1, seq(
             field('type', choice(
                 $._type_ident,
-                $.scoped_identifier,
+                $.path_expr,
             )),
             '::',
             field('gen_args', $.gen_args),
