@@ -513,6 +513,8 @@ module.exports = grammar({
             $.continue_expr,
 
             $.ref_expr,
+
+            $.struct_expr,
         ),
 
         _literal: $ => choice(
@@ -664,6 +666,20 @@ module.exports = grammar({
             field('value', $._expr),
         )),
 
+        struct_expr: $ => seq(
+            field('name', choice(
+                $._type_ident,
+                alias($.path_in_expr, $.type_path),
+            )),
+        ),
+
+        type_path_in_expr: $ => prec(-2, seq(
+            field('path', optional(choice(
+                $._path,
+                alias($.gen_type)
+            ))),
+        )),
+
         // Lambda //
         lambda: $ => prec(-1, seq(
             '\\',
@@ -745,6 +761,15 @@ module.exports = grammar({
                 $._type_ident,
                 $.type_path,
             )),
+            field('gen_args', $.gen_args),
+        )),
+
+        gen_type_turbo_fish: $ => prec(1, seq(
+            field('type', choice(
+                $._type_ident,
+                $.path_in_expr,
+            )),
+            '::',
             field('gen_args', $.gen_args),
         )),
 
