@@ -137,17 +137,6 @@ module.exports = grammar({
         )),
 
         char_lit: $ => /'.'/,
-        
-        // escape_seq: $ => token(prec(1, seq(
-        //     '\\',
-        //     choice(
-        //         /[^xuU]/,
-        //         /\d{2,3}/,
-        //         /x[0-9a-fA-F]{2,}/,
-        //         /u[0-9a-fA-F]{4}/,
-        //         /U[0-9a-fA-F]{8}/
-        //     ),
-        // )),
 
         string_lit: $ => seq(
             '"',
@@ -163,8 +152,10 @@ module.exports = grammar({
 
         _type_anno: $ => seq(':', $._type),
 
+        self: $ => 'self',
+
         _path: $ => choice(
-            'self',
+            $.self,
             'super',
             'party',
             alias(choice(...prim_types), $.ident),
@@ -189,7 +180,7 @@ module.exports = grammar({
 
         _path_ident: $ => choice(
             'super',
-            'self',
+            $.self,
             'party',
             $.ident,
         ),
