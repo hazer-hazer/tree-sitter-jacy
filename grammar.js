@@ -84,7 +84,7 @@ const BINOPS = [
 
     // mul
     ['*', '/', '%'],
-    
+
     // pow
     ['**'],
 
@@ -108,8 +108,7 @@ module.exports = grammar({
         $.comment,
     ],
 
-    conflicts: $ => [
-    ],
+    conflicts: $ => [],
 
     word: $ => $.ident,
 
