@@ -357,9 +357,10 @@ module.exports = grammar({
         ),
 
         // Mod //
-        // TODO: Finish
         mod: $ => seq(
             'mod',
+            field('name', $.ident),
+            either_semi(field('body', $.member_list)),
         ),
 
         // Struct //
