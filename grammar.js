@@ -246,15 +246,13 @@ module.exports = grammar({
         // Items //
         ///////////
         _item: $ => choice(
-            choice(
-                $.func,
-                $.enum,
-                $.impl,
-                $.type_alias,
-                $.mod,
-                $.struct,
-                $.use_decl,
-            ),
+            $.func,
+            $.enum,
+            $.impl,
+            $.type_alias,
+            $.mod,
+            $.struct,
+            $.use_decl,
         ),
 
         member_list: $ => seq(

@@ -1167,11 +1167,15 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "ident",
+          "named": true
+        },
+        {
+          "type": "vis_modifier",
           "named": true
         }
       ]
@@ -2039,6 +2043,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "vis_modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2573,6 +2587,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "vis_modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -3480,6 +3504,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "vis_modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -4525,6 +4559,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "vis_modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -5035,6 +5079,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "vis_modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -5237,6 +5291,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "vis_modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
