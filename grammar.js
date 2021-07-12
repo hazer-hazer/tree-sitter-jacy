@@ -418,7 +418,7 @@ module.exports = grammar({
             'trait',
             field('name', $._type_ident),
             field('gen_params', optional($.gen_params)),
-            field('bounds', $.trait_bounds),
+            field('bounds', optional($.trait_bounds)),
             field('body', $.member_list),
         ),
 
