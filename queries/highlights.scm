@@ -45,10 +45,9 @@
 ; "yield" @keyword
 
 ; Literals
-(bool_lit) @number
-(int_lit) @number
-(float_lit) @number
-(char_lit) @number
+(bool_lit) @constant.builtin
+(int_lit) @constant.builtin
+(float_lit) @constant.builtin
 
 (char_lit) @string
 (string_lit) @string

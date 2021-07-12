@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tree-sitter generate && node-gyp build",
     "config": "node-gyp configure --release --verbose --python=python2 --target=$(node --version)",
-    "dev": "npm run config && npm run build && ./node_modules/.bin/tree-sitter generate && ./node_modules/.bin/tree-sitter test",
-    "sample": "./node_modules/.bin/tree-sitter parse ./example.jc"
+    "dev": "npm run config && npm run build && tree-sitter generate && tree-sitter test",
+    "test": "tree-sitter test && tree-sitter parse examples/* --quiet --time"
   },
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
       "file-types": [
         "jc"
       ],
-      "injection-regex": "^(jc|jacy)$"
+      "injection-regex": "jc|jacy"
     }
   ]
 }
