@@ -486,6 +486,8 @@ module.exports = grammar({
             alias(choice(...prim_types), $.ident),
             $.path_in_expr,
 
+            $.self,
+
             $.paren_expr,
 
             $.block_expr,

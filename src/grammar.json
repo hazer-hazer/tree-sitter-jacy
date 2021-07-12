@@ -1942,8 +1942,16 @@
           "type": "FIELD",
           "name": "bounds",
           "content": {
-            "type": "SYMBOL",
-            "name": "trait_bounds"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "trait_bounds"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         },
         {
@@ -2322,6 +2330,10 @@
         {
           "type": "SYMBOL",
           "name": "path_in_expr"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "self"
         },
         {
           "type": "SYMBOL",
