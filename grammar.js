@@ -152,6 +152,8 @@ module.exports = grammar({
             '"',
         ),
 
+        vis_modifier: $ => 'pub',
+
         // Fragments //
         ident: $ => /[a-zA-Z_]+/,
 
@@ -206,8 +208,6 @@ module.exports = grammar({
 
         const_param: $ => seq('const', $.ident, $._type_anno, opt_seq('=', $._expr)),
 
-        _opt_vis: $ => optional(prec.right('pub')),
-
         field_list: $ => seq(
             '{',
             delim(',', $.field),
@@ -216,7 +216,7 @@ module.exports = grammar({
         ),
 
         field: $ => seq(
-            $._opt_vis,
+            optional($.vis_modifier),
             field('name', $._field_ident),
             ':',
             field('type', $._type),
@@ -225,7 +225,7 @@ module.exports = grammar({
         tuple_field_list: $ => seq(
             '(',
             delim(',', seq(
-                $._opt_vis,
+                optional($.vis_modifier),
                 field('type', $._type),
             )),
             trail_comma,
@@ -248,7 +248,7 @@ module.exports = grammar({
         _item: $ => choice(
             // Items with visibility
             seq(
-                $._opt_vis,
+                optional($.vis_modifier),
                 choice(
                     $.func,
                     $.enum,
