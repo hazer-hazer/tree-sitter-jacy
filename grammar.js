@@ -103,6 +103,11 @@ const opt_seq = (...rules) => optional(seq(...rules))
 module.exports = grammar({
     name: 'jacy',
 
+    extras: $ => [
+        /\s|\\\r?\n/,
+        $.comment,
+    ],
+
     conflicts: $ => [
         [$._type, $._path],
         [$.path_in_expr, $.type_path],
@@ -201,6 +206,16 @@ module.exports = grammar({
         type_param: $ => seq($._type_ident, optional($._type_anno), opt_seq('=', $._type)),
 
         const_param: $ => seq('const', $.ident, $._type_anno, opt_seq('=', $._expr)),
+
+        // Comments //
+        comment: $ => token(choice(
+            seq('//', /(\\(.|\r?\n)|[^\\\n])*/),
+            seq(
+                '/*',
+                /[^*]*\*+([^/*][^*]*\*+)*/,
+                '/',
+            ),
+        )),
 
         ///////////
         // Items //
