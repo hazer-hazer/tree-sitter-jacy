@@ -4641,20 +4641,14 @@
       "name": "comment"
     }
   ],
-  "conflicts": [
-    [
-      "_type",
-      "_path"
-    ],
-    [
-      "path_expr",
-      "type_path"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [
-    "_type_ident"
+    "_path",
+    "_type_ident",
+    "_field_ident",
+    "_item"
   ],
   "supertypes": []
 }

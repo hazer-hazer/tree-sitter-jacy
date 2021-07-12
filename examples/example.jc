@@ -1,3 +1,6 @@
+use std::collections::hash_map::{self, HashMap};
+
+/*
 mod my_module {
     pub trait Trait {
         type Assoc;
@@ -19,9 +22,9 @@ mod my_module {
 }
 
 func main {
-    use std::collections::hash_map::{self, HashMap};
 
     let a: Struct = Struct {field: 123};
 
     print(a.field);
 }
+*/

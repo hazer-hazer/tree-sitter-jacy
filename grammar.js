@@ -109,14 +109,15 @@ module.exports = grammar({
     ],
 
     conflicts: $ => [
-        [$._type, $._path],
-        [$.path_expr, $.type_path],
     ],
 
     word: $ => $.ident,
 
     inline: $ => [
+        $._path,
         $._type_ident,
+        $._field_ident,
+        $._item,
     ],
 
     rules: {
@@ -494,7 +495,6 @@ module.exports = grammar({
             $.self,
 
             $.paren_expr,
-
             $.block_expr,
 
             $.infix_expr,
