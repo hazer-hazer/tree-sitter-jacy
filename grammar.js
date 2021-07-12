@@ -670,7 +670,24 @@ module.exports = grammar({
             field('name', choice(
                 $._type_ident,
                 alias($.path_in_expr, $.type_path),
+                $.gen_type_turbo_fish,
             )),
+            field('body', $.field_init_list),
+        ),
+
+        field_init_list: $ => seq(
+            '{',
+            delim(',', choice(
+                $.ident, // `{x}` shortcut case
+                seq(
+                    field('name', $._field_ident),
+                    ':',
+                    field('value', $._expr),
+                ),
+                seq('...', $._expr),
+            )),
+            trail_comma,
+            '}',
         ),
 
         type_path_in_expr: $ => prec(-2, seq(
