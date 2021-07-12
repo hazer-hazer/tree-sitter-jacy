@@ -79,6 +79,10 @@
 
 ;;; Specific rules for identifiers
 
+(use_specific (self) @keyword)
+(path_in_expr (self) @keyword)
+(type_path (self) @keyword)
+
 ; CAPS identifiers treated as constants
 ((ident) @constant
     (#match? @constant "^[A-Z][A-Z\\d_]+$"))

@@ -5340,9 +5340,13 @@
     "named": true,
     "fields": {
       "path": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "::",
+            "named": false
+          },
           {
             "type": "ident",
             "named": true

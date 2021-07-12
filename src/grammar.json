@@ -1723,8 +1723,17 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "_path"
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_path"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "::"
+                  }
+                ]
               },
               {
                 "type": "BLANK"
