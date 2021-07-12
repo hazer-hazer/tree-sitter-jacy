@@ -341,6 +341,7 @@ module.exports = grammar({
         /////////////////
         _expr: $ => choice(
             $._literal,
+            $._neg_lit,
 
             prec.left($.ident),
             alias(choice(...prim_types), $.ident),
@@ -376,6 +377,11 @@ module.exports = grammar({
             $.float_lit,
             $.char_lit,
             $.string_lit,
+        ),
+
+        _neg_lit: $ => seq(
+            '-',
+            $._literal,
         ),
 
         paren_expr: $ => seq(

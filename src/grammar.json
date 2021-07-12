@@ -1273,6 +1273,10 @@
           "name": "_literal"
         },
         {
+          "type": "SYMBOL",
+          "name": "_neg_lit"
+        },
+        {
           "type": "PREC_LEFT",
           "value": 0,
           "content": {
@@ -1458,6 +1462,19 @@
         {
           "type": "SYMBOL",
           "name": "string_lit"
+        }
+      ]
+    },
+    "_neg_lit": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_literal"
         }
       ]
     },
