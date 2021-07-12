@@ -256,6 +256,7 @@ module.exports = grammar({
                     $.type_alias,
                     $.mod,
                     $.struct,
+                    $.use_decl,
                 ),
             ),
             // Items without visibility
@@ -378,6 +379,26 @@ module.exports = grammar({
                 ),
             ),
         ),
+
+        // Use decl //
+        ues_decl: $ => seq(
+            'use',
+            field('use_tree', $._use_tree),
+            ';',
+        ),
+
+        _use_tree: $ => choice(
+            $._path,
+            $.use_rebind,
+            $.use_specific,
+            $.use_all,
+        ),
+
+        use_rebind: $ => seq(
+            field('path', $._path),
+            'as',
+            field('binding', choice('_', $.ident)),
+        )
 
         // Trait //
         trait: $ => seq(
