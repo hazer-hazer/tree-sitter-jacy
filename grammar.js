@@ -342,7 +342,11 @@ module.exports = grammar({
         // Type alias //
         type_alias: $ => seq(
             'type',
-
+            field('name', $._type_ident),
+            field('gen_params', optional($.gen_params)),
+            '=',
+            field('type', $._type),
+            ';',
         ),
 
         assoc_type: $ => seq(
