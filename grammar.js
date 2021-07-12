@@ -148,10 +148,10 @@ module.exports = grammar({
 
         string_lit: $ => seq(
             '"',
-            repeat(choice(
+            repeat(
                 token.immediate(prec(1, /[^\\"\n]+/)),
                 // $.escape_seq,
-            )),
+            ),
             '"',
         ),
 
