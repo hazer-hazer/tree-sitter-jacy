@@ -5755,6 +5755,10 @@
             "named": true
           },
           {
+            "type": "use_path_specific",
+            "named": true
+          },
+          {
             "type": "use_rebind",
             "named": true
           },
@@ -5774,6 +5778,48 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "use_path_specific",
+    "named": true,
+    "fields": {
+      "path": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "party",
+            "named": true
+          },
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          }
+        ]
+      },
+      "specifics": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "use_specific",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -5825,38 +5871,7 @@
   {
     "type": "use_specific",
     "named": true,
-    "fields": {
-      "path": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "::",
-            "named": false
-          },
-          {
-            "type": "ident",
-            "named": true
-          },
-          {
-            "type": "party",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "self",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": false,
@@ -5883,6 +5898,10 @@
         },
         {
           "type": "use_all",
+          "named": true
+        },
+        {
+          "type": "use_path_specific",
           "named": true
         },
         {

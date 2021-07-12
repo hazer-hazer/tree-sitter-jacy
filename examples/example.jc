@@ -26,7 +26,7 @@ func main {
         Trait::Assoc,
     };
 
-    let a: Struct = Struct {123};
+    let a: Struct = Struct {field: 123};
 
     print(a.field);
 }
