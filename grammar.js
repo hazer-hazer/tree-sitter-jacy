@@ -152,7 +152,7 @@ module.exports = grammar({
             '"',
         ),
 
-        vis_modifier: $ => 'pub',
+        vis_modifier: $ => prec.right('pub'),
 
         // Fragments //
         ident: $ => /[a-zA-Z_]+/,
