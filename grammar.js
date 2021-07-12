@@ -232,7 +232,7 @@ module.exports = grammar({
             ),
         ),
 
-        visibility: $ => 'pub',
+        visibility: $ => prec.right('pub'),
 
         // Func //
         func: $ => seq(

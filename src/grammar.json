@@ -260,12 +260,16 @@
         }
       ]
     },
+    "self": {
+      "type": "STRING",
+      "value": "self"
+    },
     "_path": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "self"
+          "type": "SYMBOL",
+          "name": "self"
         },
         {
           "type": "STRING",
@@ -517,8 +521,8 @@
           "value": "super"
         },
         {
-          "type": "STRING",
-          "value": "self"
+          "type": "SYMBOL",
+          "name": "self"
         },
         {
           "type": "STRING",
@@ -692,34 +696,97 @@
         }
       ]
     },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "//"
+              },
+              {
+                "type": "PATTERN",
+                "value": "(\\\\(.|\\r?\\n)|[^\\\\\\n])*"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "/*"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[^*]*\\*+([^/*][^*]*\\*+)*"
+              },
+              {
+                "type": "STRING",
+                "value": "/"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "_item": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "func"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "visibility"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "enum"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "impl"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type_alias"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "mod"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "struct"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "func"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "enum"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "impl"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "type_alias"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "mod"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "struct"
+            }
+          ]
         }
       ]
+    },
+    "visibility": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "STRING",
+        "value": "pub"
+      }
     },
     "func": {
       "type": "SEQ",
@@ -1384,7 +1451,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "member_access_expr"
+          "name": "field_expr"
         },
         {
           "type": "SYMBOL",
@@ -2043,7 +2110,7 @@
         ]
       }
     },
-    "member_access_expr": {
+    "field_expr": {
       "type": "PREC_LEFT",
       "value": 17,
       "content": {
@@ -2051,7 +2118,7 @@
         "members": [
           {
             "type": "FIELD",
-            "name": "lhs",
+            "name": "expr",
             "content": {
               "type": "SYMBOL",
               "name": "_expr"
@@ -2063,10 +2130,19 @@
           },
           {
             "type": "FIELD",
-            "name": "rhs",
+            "name": "field",
             "content": {
-              "type": "SYMBOL",
-              "name": "_expr"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_field_ident"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "int_lit"
+                }
+              ]
             }
           }
         ]
@@ -3424,12 +3500,25 @@
       },
       "named": true,
       "value": "type_ident"
+    },
+    "_field_ident": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "ident"
+      },
+      "named": true,
+      "value": "field_ident"
     }
   },
   "extras": [
     {
       "type": "PATTERN",
-      "value": "\\s"
+      "value": "\\s|\\\\\\r?\\n"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     }
   ],
   "conflicts": [
