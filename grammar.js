@@ -42,7 +42,7 @@ const precIndex = [
     'pow',
     'cast',
     'unary',
-    'errprop',
+    'try',
     'call',
     'field',
     'path',
@@ -357,6 +357,7 @@ module.exports = grammar({
             $.prefix_expr,
             $.member_access_expr,
             $.call_expr,
+            $.try_expr,
 
             $.assign_expr,
 
@@ -411,6 +412,14 @@ module.exports = grammar({
         call_expr: $ => prec(PREC.call, seq(
             field('func', $._expr),
             field('args', $.args),
+        )),
+
+        try_expr: $ => prec(PREC.try, seq(
+            $._expr,
+            choice(
+                '?',
+                '!'
+            )
         )),
 
         args: $ => seq(
