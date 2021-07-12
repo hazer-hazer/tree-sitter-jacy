@@ -972,7 +972,7 @@
                         "members": [
                           {
                             "type": "SYMBOL",
-                            "name": "ident"
+                            "name": "_type_ident"
                           },
                           {
                             "type": "CHOICE",
@@ -3122,7 +3122,7 @@
                     "members": [
                       {
                         "type": "SYMBOL",
-                        "name": "ident"
+                        "name": "_type_ident"
                       },
                       {
                         "type": "SYMBOL",
@@ -3166,7 +3166,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "ident"
+                  "name": "_type_ident"
                 },
                 {
                   "type": "SYMBOL",

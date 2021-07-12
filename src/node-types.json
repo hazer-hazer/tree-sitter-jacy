@@ -1198,6 +1198,10 @@
           "named": true
         },
         {
+          "type": "type_ident",
+          "named": true
+        },
+        {
           "type": "unit_expr",
           "named": true
         }
@@ -1805,7 +1809,7 @@
         "required": true,
         "types": [
           {
-            "type": "ident",
+            "type": "type_ident",
             "named": true
           },
           {
@@ -4377,6 +4381,10 @@
           },
           {
             "type": "turbofish_gen",
+            "named": true
+          },
+          {
+            "type": "type_ident",
             "named": true
           }
         ]

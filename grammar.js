@@ -549,6 +549,7 @@ module.exports = grammar({
             $.mut_type,
             $.type_path,
             $.gen_type,
+            $.never_type,
         ),
 
         unit_type: $ => seq('(', ')'),
@@ -607,6 +608,8 @@ module.exports = grammar({
             )),
             field('gen_args', $.gen_args),
         )),
+
+        never_type: $ => '!',
 
         //////////////
         // Patterns //
