@@ -27,4 +27,8 @@ func main {
     let a: Struct = Struct {field: 123};
 
     print(a.field);
+
+    let a = \() -> {
+        print("lol");
+    };
 }

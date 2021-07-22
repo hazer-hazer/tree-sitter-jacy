@@ -1,8 +1,8 @@
 node_modules
 build
 *.log
-log.html
 package-lock.json
 /target/
 yarn.lock
 Cargo.lock
+log.html
