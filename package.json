@@ -7,11 +7,12 @@
     "build": "tree-sitter generate && node-gyp build",
     "config": "node-gyp configure --release --verbose --python=python2 --target=$(node --version)",
     "dev": "npm run config && npm run build && tree-sitter generate && tree-sitter test",
-    "test": "tree-sitter test && tree-sitter parse examples/* --time"
+    "test": "tree-sitter test && tree-sitter parse examples/* --time",
+    "install": "node-gyp rebuild"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hazer-hazer/Jacy-Atom.git"
+    "url": "git+https://github.com/jacylang/Jacy-Atom.git"
   },
   "keywords": [
     "tree-sitter",
@@ -24,9 +25,9 @@
   "author": "hazer-hazer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hazer-hazer/Jacy-Atom/issues"
+    "url": "https://github.com/jacylang/Jacy-Atom/issues"
   },
-  "homepage": "https://github.com/hazer-hazer/Jacy-Atom#readme",
+  "homepage": "https://github.com/jacylang/Jacy-Atom#readme",
   "devDependencies": {
     "tree-sitter-cli": "^0.20.0",
     "node-gyp": "8.1.0"
@@ -42,5 +43,9 @@
       ],
       "injection-regex": "jc|jacy"
     }
-  ]
+  ],
+  "gypfile": true,
+  "directories": {
+    "example": "examples"
+  }
 }
